@@ -1,0 +1,10 @@
+name: BlockedDates
+modelClass: HerzGarlan\Config\Models\BlockedDates
+form: $/herzgarlan/config/models/blockeddates/fields.yaml
+defaultRedirect: herzgarlan/config/blockeddates
+create:
+    redirect: 'herzgarlan/config/blockeddates/update/:id'
+    redirectClose: herzgarlan/config/blockeddates
+update:
+    redirect: herzgarlan/config/blockeddates
+    redirectClose: herzgarlan/config/blockeddates

@@ -1,0 +1,35 @@
+fields:
+    day:
+        label: 'herzgarlan.config::lang.timeslot.day'
+        options:
+            1: Monday
+            2: Tuesday
+            3: Wednesday
+            4: Thursday
+            5: Friday
+            6: Saturday
+            7: Sunday
+        span: auto
+        type: dropdown
+    timeslot:
+        label: 'herzgarlan.config::lang.timeslot.time_slot'
+        prompt: 'Add new time slot'
+        span: full
+        type: repeater
+        commentAbove: 'Add time slots for each day of the week'
+        form:
+            fields:
+                time_from:
+                    label: 'herzgarlan.config::lang.timeslot.time_from'
+                    mode: time
+                    span: auto
+                    type: datepicker
+                time_to:
+                    label: 'herzgarlan.config::lang.timeslot.time_to'
+                    mode: time
+                    span: auto
+                    type: datepicker
+                capacity:
+                    label: 'herzgarlan.config::lang.timeslot.capacity'
+                    span: auto
+                    type: number

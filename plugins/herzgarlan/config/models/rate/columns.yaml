@@ -1,0 +1,23 @@
+columns:
+    name:
+        label: 'herzgarlan.config::lang.rate.name'
+        type: text
+        searchable: true
+        sortable: true
+    slug:
+        label: 'herzgarlan.config::lang.rate.slug'
+        type: text
+        searchable: true
+        sortable: true
+    value:
+        label: 'herzgarlan.config::lang.rate.value'
+        type: text
+        sortable: true
+    created_at:
+        label: 'herzgarlan.config::lang.rate.created_at'
+        type: datetime
+        sortable: true
+    updated_at:
+        label: 'herzgarlan.config::lang.rate.updated_at'
+        type: datetime
+        sortable: true

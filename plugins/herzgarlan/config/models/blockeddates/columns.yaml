@@ -1,0 +1,15 @@
+columns:
+    date_start:
+        label: 'herzgarlan.config::lang.blocked_dates.date_start'
+        type: partial
+        sortable: true
+        path: ~/plugins/herzgarlan/config/models/blockeddates/_date.htm
+    date_end:
+        label: 'herzgarlan.config::lang.blocked_dates.date_end'
+        type: partial
+        sortable: true
+        path: ~/plugins/herzgarlan/config/models/blockeddates/_date.htm
+    remarks:
+        label: 'herzgarlan.config::lang.blocked_dates.remarks'
+        type: text
+        searchable: true

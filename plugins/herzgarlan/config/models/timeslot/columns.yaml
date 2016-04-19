@@ -1,0 +1,15 @@
+columns:
+    day:
+        label: 'herzgarlan.config::lang.timeslot.day'
+        type: partial
+        sortable: true
+        path: ~/plugins/herzgarlan/config/models/timeslot/_day.htm
+    timeslot:
+        label: 'herzgarlan.config::lang.timeslot.time_slot'
+        type: partial
+        path: ~/plugins/herzgarlan/config/models/timeslot/_slots.htm
+    capacity:
+        label: 'herzgarlan.config::lang.timeslot.capacity'
+        type: partial
+        path: ~/plugins/herzgarlan/config/models/timeslot/_capacity.htm
+        valueFrom: timeslot

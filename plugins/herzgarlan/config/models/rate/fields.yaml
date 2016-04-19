@@ -1,0 +1,21 @@
+fields:
+    name:
+        label: 'herzgarlan.config::lang.rate.name'
+        span: auto
+        type: text
+    slug:
+        label: 'herzgarlan.config::lang.rate.slug'
+        span: auto
+        preset:
+            field: name
+            type: slug
+        type: text
+    value:
+        label: 'herzgarlan.config::lang.rate.value'
+        span: auto
+        type: text
+    short_description:
+        label: 'herzgarlan.config::lang.rate.description'
+        size: tiny
+        span: auto
+        type: textarea

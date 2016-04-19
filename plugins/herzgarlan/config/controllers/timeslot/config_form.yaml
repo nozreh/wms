@@ -1,0 +1,13 @@
+name: Timeslot
+modelClass: HerzGarlan\Config\Models\Timeslot
+form: $/herzgarlan/config/models/timeslot/fields.yaml
+defaultRedirect: herzgarlan/config/timeslot
+create:
+    title: 'herzgarlan.config::lang.timeslot.new_timeslot'
+    redirect: 'herzgarlan/config/timeslot/update/:id'
+    redirectClose: herzgarlan/config/timeslot
+update:
+    title: 'herzgarlan.config::lang.timeslot.timeslot_update'
+    redirect: herzgarlan/config/timeslot
+    redirectClose: herzgarlan/config/timeslot
+preview: {  }

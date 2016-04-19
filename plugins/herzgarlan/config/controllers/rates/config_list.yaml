@@ -1,0 +1,11 @@
+title: Rates
+modelClass: HerzGarlan\Config\Models\Rate
+list: $/herzgarlan/config/models/rate/columns.yaml
+recordUrl: 'herzgarlan/config/rates/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

@@ -1,0 +1,8 @@
+<div class="layout-row min-size">
+<?php 
+$capacity = 0;
+foreach ( $value as $key => $val): 
+	$capacity += (int)$val['capacity']; 
+endforeach; ?>
+<?=  $capacity; ?>
+</div>

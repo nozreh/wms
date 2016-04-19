@@ -1,0 +1,14 @@
+title: Timeslot
+modelClass: HerzGarlan\Config\Models\Timeslot
+list: $/herzgarlan/config/models/timeslot/columns.yaml
+recordUrl: 'herzgarlan/config/timeslot/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+defaultSort:
+    column: day
+    direction: asc
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

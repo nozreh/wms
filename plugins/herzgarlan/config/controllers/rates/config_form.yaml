@@ -1,0 +1,11 @@
+name: Rates
+modelClass: HerzGarlan\Config\Models\Rate
+form: $/herzgarlan/config/models/rate/fields.yaml
+defaultRedirect: herzgarlan/config/rates
+create:
+    redirect: 'herzgarlan/config/rates/update/:id'
+    redirectClose: herzgarlan/config/rates
+update:
+    redirect: herzgarlan/config/rates
+    redirectClose: herzgarlan/config/rates
+preview: {  }
