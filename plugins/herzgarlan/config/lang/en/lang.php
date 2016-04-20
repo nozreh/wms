@@ -33,4 +33,7 @@
         'manage_blocked_dates' => 'Manage Blocked Dates',
         'blocked_dates' => 'Blocked Dates',
     ],
+    'config' => [
+        'manage_config' => 'Manage Config',
+    ],
 ];

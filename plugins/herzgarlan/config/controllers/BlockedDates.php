@@ -11,7 +11,7 @@ class BlockedDates extends Controller
     public $formConfig = 'config_form.yaml';
 
     public $requiredPermissions = [
-        'herzgarlan.config.manage_blocked_dates' 
+        'herzgarlan.config.manage_config' 
     ];
 
     public function __construct()

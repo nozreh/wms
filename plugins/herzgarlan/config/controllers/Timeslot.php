@@ -11,7 +11,7 @@ class Timeslot extends Controller
     public $formConfig = 'config_form.yaml';
 
     public $requiredPermissions = [
-        'herzgarlan.config.manage_timeslots' 
+        'herzgarlan.config.manage_config' 
     ];
 
     public function __construct()

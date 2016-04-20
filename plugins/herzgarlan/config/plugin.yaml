@@ -5,18 +5,9 @@ plugin:
     icon: oc-icon-gears
     homepage: ''
 permissions:
-    'herzgarlan.config.*':
+    herzgarlan.config.manage_config:
         tab: 'herzgarlan.config::lang.plugin.name'
-        label: 'herzgarlan.config::lang.plugin.name'
-    herzgarlan.config.manage_rates:
-        tab: 'herzgarlan.config::lang.rate.manage_rate'
-        label: 'herzgarlan.config::lang.rate.manage_rate'
-    herzgarlan.config.manage_timeslots:
-        tab: 'herzgarlan.config::lang.timeslot.manage_timeslot'
-        label: 'herzgarlan.config::lang.timeslot.manage_timeslot'
-    herzgarlan.config.manage_blocked_dates:
-        tab: 'herzgarlan.config::lang.blocked_dates.manage_blocked_dates'
-        label: 'herzgarlan.config::lang.blocked_dates.manage_blocked_dates'
+        label: 'herzgarlan.config::lang.config.manage_config'
 navigation:
     config:
         label: 'herzgarlan.config::lang.plugin.name'
@@ -29,18 +20,17 @@ navigation:
                 label: 'herzgarlan.config::lang.rate.rates'
                 url: herzgarlan/config/rates
                 icon: icon-money
-                owner: HerzGarlan.Config
                 permissions:
-                    - herzgarlan.config.manage_rates
+                    - herzgarlan.config.manage_config
             timeslot:
                 label: 'herzgarlan.config::lang.timeslot.time_slot'
                 url: herzgarlan/config/timeslot
                 icon: icon-clock-o
                 permissions:
-                    - herzgarlan.config.manage_timeslots
+                    - herzgarlan.config.manage_config
             blocked_dates:
                 label: 'herzgarlan.config::lang.blocked_dates.blocked_dates'
                 url: herzgarlan/config/blockeddates
                 icon: icon-calendar-o
                 permissions:
-                    - herzgarlan.config.manage_blocked_dates
+                    - herzgarlan.config.manage_config
