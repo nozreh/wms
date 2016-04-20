@@ -1,45 +1,8 @@
-
+==
 {# Note: Only one levels of sublinks are supported by Bootstrap 3 #}
 {% set
     links = {
         'home': ['home', 'Home'],
-        'pages': {
-            name: 'Pages',
-            sublinks: {
-                'about':         ['samples/about', 'About Us'],
-                'contact':       ['samples/contact', 'Contact Us'],
-                'pricing-table': ['samples/pricing-table', 'Pricing Table'],
-                'services':      ['samples/services', 'Services'],
-                'signin':        ['samples/signin', 'Sign In'],
-                'register':      ['samples/register', 'Register'],
-                'error':         ['error', 'Error Page'],
-                '404':           ['404', '404 Page'],
-            },
-        },
-        'portfolio': {
-            name: 'Portfolio',
-            sublinks: {
-                'portfolio': ['portfolio/portfolio', 'Portfolio'],
-                'project': ['portfolio/project', 'Project'],
-            },
-        },
-        'blog': {
-            name: 'Blog',
-            sublinks: {
-                'blog': ['blog/blog', 'Blog'],
-                'post': ['blog/post', 'Blog Post'],
-            },
-        },
-        'shop': {
-            name: 'Shop',
-            sublinks: {
-                'shop': ['shop/shop', 'Shop'],
-                'product': ['shop/product', 'Product'],
-                'cart': ['shop/cart', 'Cart'],
-            },
-        },
-        'ui-elements': ['ui-elements', 'UI Elements'],
-
     }
 %}
 
@@ -75,7 +38,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ 'home'|page }}">Flat</a>
+            <a class="navbar-brand" href="{{ 'home'|page }}">WMS</a>
         </div>
         <div class="collapse navbar-collapse navbar-main-collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -91,3 +54,40 @@
         </div>
     </div>
 </nav>
+<!--'NAV DEFAUlT
+        pages': { 
+            name: 'Pages',
+            sublinks: {
+                'about':         ['samples/about', 'About Us'],
+                'contact':       ['samples/contact', 'Contact Us'],
+                'pricing-table': ['samples/pricing-table', 'Pricing Table'],
+                'services':      ['samples/services', 'Services'],
+                'signin':        ['samples/signin', 'Sign In'],
+                'register':      ['samples/register', 'Register'],
+                'error':         ['error', 'Error Page'],
+                '404':           ['404', '404 Page'],
+            },
+        },
+        'portfolio': {
+            name: 'Portfolio',
+            sublinks: {
+                'portfolio': ['portfolio/portfolio', 'Portfolio'],
+                'project': ['portfolio/project', 'Project'],
+            },
+        },
+        'blog': {
+            name: 'Blog',
+            sublinks: {
+                'blog': ['blog/blog', 'Blog'],
+                'post': ['blog/post', 'Blog Post'],
+            },
+        },
+        'shop': {
+            name: 'Shop',
+            sublinks: {
+                'shop': ['shop/shop', 'Shop'],
+                'product': ['shop/product', 'Product'],
+                'cart': ['shop/cart', 'Cart'],
+            },
+        },
+        'ui-elements': ['ui-elements', 'UI Elements'], -->
