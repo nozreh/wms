@@ -24,7 +24,7 @@
         "source": "https://github.com/octobercms/october"
     },
     "require": {
-        "php": ">=5.4",
+        "php": "^5.5.9",
         "october/rain": "~1.0",
         "october/system": "~1.0",
         "october/backend": "~1.0",
@@ -36,16 +36,10 @@
         "phpunit/phpunit": "~4.0",
         "phpunit/phpunit-selenium": ">=1.2"
     },
-    "autoload-dev": {
-        "classmap": [
-            "tests/TestCase.php",
-            "tests/UiTestCase.php",
-            "tests/PluginTestCase.php"
-        ]
-    },
     "scripts": {
         "post-create-project-cmd": [
-            "php artisan key:generate"
+            "php artisan key:generate",
+            "chmod -R 777 /storage/.*"
         ]
     },
     "config": {

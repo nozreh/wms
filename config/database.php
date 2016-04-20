@@ -54,11 +54,11 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => 'us-cdbr-iron-east-03.cleardb.net',
+            'host'      => 'localhost',
             'port'      => 3306,
-            'database'  => 'heroku_b00d3537b6311a4',
-            'username'  => 'bab176f8469ead',
-            'password'  => '2a7ed89b',
+            'database'  => 'wpzvhjqwfh',
+            'username'  => 'wpzvhjqwfh',
+            'password'  => 'T7jrzvhjB3',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
