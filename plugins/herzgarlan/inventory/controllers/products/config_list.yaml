@@ -1,0 +1,15 @@
+title: Products
+modelClass: HerzGarlan\Inventory\Models\Products
+list: $/herzgarlan/inventory/models/products/columns.yaml
+recordUrl: 'herzgarlan/inventory/products/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+showSorting: 1
+defaultSort:
+    column: created_at
+    direction: desc
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

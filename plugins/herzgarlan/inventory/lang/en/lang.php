@@ -1,0 +1,25 @@
+<?php return [
+    'plugin' => [
+        'name' => 'Inventory',
+        'description' => 'Inventory module for WMS',
+    ],
+    'products' => [
+        'customer' => 'Customer',
+        'name' => 'Name',
+        'code' => 'Code',
+        'description' => 'Description',
+        'dimension' => 'Dimension',
+        'width' => 'Width',
+        'height' => 'Height',
+        'depth' => 'Depth',
+        'carton_qty' => 'Carton Quantity',
+        'unit_qty' => 'Quantity per Carton',
+        'weight' => 'Weight',
+        'additional_info' => 'Additional Info',
+        'barcode' => 'Barcode',
+        'created_at' => 'Created Date',
+        'updated_at' => 'Updated Date',
+        'manage_products' => 'Manage Products',
+        'menu_label' => 'Products',
+    ],
+];

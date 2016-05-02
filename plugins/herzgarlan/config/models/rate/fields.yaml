@@ -8,7 +8,7 @@ fields:
         span: auto
         preset:
             field: name
-            type: slug
+            type: str_random(40)
         type: text
     value:
         label: 'herzgarlan.config::lang.rate.value'

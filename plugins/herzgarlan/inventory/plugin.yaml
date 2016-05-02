@@ -1,0 +1,24 @@
+plugin:
+    name: 'herzgarlan.inventory::lang.plugin.name'
+    description: 'herzgarlan.inventory::lang.plugin.description'
+    author: 'Herzon Garlan'
+    icon: oc-icon-book
+    homepage: ''
+permissions:
+    manage_products:
+        tab: 'herzgarlan.inventory::lang.plugin.name'
+        label: 'Manage Products'
+navigation:
+    inventory:
+        label: 'herzgarlan.inventory::lang.plugin.name'
+        url: herzgarlan/inventory/products
+        icon: icon-book
+        permissions:
+            - manage_products
+        sideMenu:
+            products:
+                label: 'herzgarlan.inventory::lang.products.menu_label'
+                url: herzgarlan/inventory/products
+                icon: icon-shopping-cart
+                permissions:
+                    - manage_products

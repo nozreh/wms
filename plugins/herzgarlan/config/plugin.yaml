@@ -14,21 +14,21 @@ navigation:
         url: herzgarlan/config/rates
         icon: icon-gears
         permissions:
-            - 'herzgarlan.config.*'
+            - herzgarlan.config.manage_config
         sideMenu:
-            rate:
+            rates:
                 label: 'herzgarlan.config::lang.rate.rates'
                 url: herzgarlan/config/rates
                 icon: icon-money
                 permissions:
                     - herzgarlan.config.manage_config
-            timeslot:
+            timeslots:
                 label: 'herzgarlan.config::lang.timeslot.time_slot'
                 url: herzgarlan/config/timeslot
                 icon: icon-clock-o
                 permissions:
                     - herzgarlan.config.manage_config
-            blocked_dates:
+            blockeddates:
                 label: 'herzgarlan.config::lang.blocked_dates.blocked_dates'
                 url: herzgarlan/config/blockeddates
                 icon: icon-calendar-o

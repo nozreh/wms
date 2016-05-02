@@ -1,0 +1,51 @@
+fields:
+    name:
+        label: 'herzgarlan.inventory::lang.products.name'
+        span: auto
+        type: text
+    code:
+        label: 'herzgarlan.inventory::lang.products.code'
+        span: auto
+        disabled: 0
+        preset:
+            field: name
+            type: slug
+        type: text
+    customer:
+        label: 'herzgarlan.inventory::lang.products.customer'
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+    barcode:
+        label: 'herzgarlan.inventory::lang.products.barcode'
+        span: auto
+        type: text
+    description:
+        label: Description
+        size: tiny
+        span: full
+        type: textarea
+    carton_quantity:
+        label: 'herzgarlan.inventory::lang.products.carton_qty'
+        span: auto
+        type: text
+    unit_quantity:
+        label: 'herzgarlan.inventory::lang.products.unit_qty'
+        span: auto
+        type: text
+    dimension:
+        label: 'herzgarlan.inventory::lang.products.dimension'
+        span: auto
+        type: text
+        commentAbove: 'W x H x D (20cm x 40cm x 50cm)'
+    weight:
+        label: 'herzgarlan.inventory::lang.products.weight'
+        span: auto
+        type: text
+        commentAbove: 'Please indicate unit of measurement ( e.g. 500g )'
+    additional_info:
+        label: 'herzgarlan.inventory::lang.products.additional_info'
+        size: tiny
+        span: full
+        type: textarea
