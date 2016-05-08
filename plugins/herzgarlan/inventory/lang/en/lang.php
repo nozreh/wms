@@ -21,5 +21,9 @@
         'updated_at' => 'Updated Date',
         'manage_products' => 'Manage Products',
         'menu_label' => 'Products',
+        'photo' => 'Photo',
     ],
+    'loose_carton' => 'Loose Carton',
+    'carton' => 'Carton',
+    'pieces' => 'Pieces',
 ];

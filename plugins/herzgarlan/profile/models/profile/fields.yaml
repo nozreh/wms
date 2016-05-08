@@ -1,0 +1,45 @@
+fields:
+    profile[company]:
+        label: 'herzgarlan.profile::lang.company_name'
+        span: auto
+        required: 1
+        type: text
+        tab: 'Company'
+    profile[contact_name]:
+        label: 'herzgarlan.profile::lang.contact_name'
+        span: auto
+        required: 1
+        type: text
+        tab: 'Company'
+    profile[contact_email]:
+        label: 'herzgarlan.profile::lang.contact_email'
+        span: auto
+        type: text
+        required: 1
+        tab: 'Company'
+    profile[contact_no]:
+        label: 'herzgarlan.profile::lang.contact_no'
+        span: auto
+        required: 1
+        type: text
+        tab: 'Company'
+    profile[registration_no]:
+        label: 'herzgarlan.profile::lang.registration_no'
+        span: auto
+        required: 1
+        type: text
+        tab: 'Company'
+    profile[mailing_addr]:
+        label: 'herzgarlan.profile::lang.mailing_addr'
+        size: tiny
+        span: full
+        required: 1
+        type: textarea
+        tab: 'Company'
+    profile[shipping_addr]:
+        label: 'herzgarlan.profile::lang.shipping_addr'
+        size: tiny
+        span: full
+        type: textarea
+        tab: 'Company'
+

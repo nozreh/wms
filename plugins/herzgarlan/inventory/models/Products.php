@@ -9,6 +9,7 @@ use RainLab\User\Models\User as User;
 class Products extends Model
 {
     use \October\Rain\Database\Traits\Validation;
+    protected $jsonable = ['loose_carton'];
     //public $customer;
     /*
      * Validation
@@ -32,5 +33,9 @@ class Products extends Model
      */
     public $belongsTo = [
         'customer' => ['Rainlab\User\Models\User']
+    ];
+
+    public $attachMany = [
+        'photo' => ['System\Models\File']
     ];
 }

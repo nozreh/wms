@@ -1,0 +1,41 @@
+plugin:
+    name: 'herzgarlan.profile::lang.plugin.name'
+    description: 'herzgarlan.profile::lang.plugin.description'
+    author: 'Herzon Garlan'
+    icon: oc-icon-user-plus
+    homepage: ''
+
+phone:
+    label: herzgarlan.profile::lang.user.phone
+    tab: Profile
+    span: left
+
+logo:
+    label: herzgarlan.profile::lang.user.logo
+    type: fileupload
+    mode: file
+    tab: Profile
+    span: right
+
+company:
+    label: herzgarlan.profile::lang.user.company
+    tab: Profile
+    span: left
+
+mailling_addr:
+    label: herzgarlan.profile::lang.user.mailling_addr
+    tab: Profile
+
+shipping_addr:
+    label: herzgarlan.profile::lang.user.shipping_addr
+    tab: Profile
+
+registration_no:
+    label: herzgarlan.profile::lang.user.registration_no
+    tab: Profile
+    span: right
+    
+zip:
+    label: herzgarlan.profile::lang.user.zip
+    tab: Profile
+    span: left

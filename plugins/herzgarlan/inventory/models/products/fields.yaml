@@ -2,11 +2,12 @@ fields:
     name:
         label: 'herzgarlan.inventory::lang.products.name'
         span: auto
+        required: 1
         type: text
     code:
         label: 'herzgarlan.inventory::lang.products.code'
         span: auto
-        disabled: 0
+        required: 1
         preset:
             field: name
             type: slug
@@ -16,6 +17,7 @@ fields:
         nameFrom: name
         descriptionFrom: description
         span: auto
+        required: 1
         type: relation
     barcode:
         label: 'herzgarlan.inventory::lang.products.barcode'
@@ -29,11 +31,15 @@ fields:
     carton_quantity:
         label: 'herzgarlan.inventory::lang.products.carton_qty'
         span: auto
-        type: text
+        default: '0'
+        required: 1
+        type: number
     unit_quantity:
         label: 'herzgarlan.inventory::lang.products.unit_qty'
         span: auto
-        type: text
+        default: '0'
+        required: 1
+        type: number
     dimension:
         label: 'herzgarlan.inventory::lang.products.dimension'
         span: auto
@@ -49,3 +55,27 @@ fields:
         size: tiny
         span: full
         type: textarea
+    loose_carton:
+        label: 'herzgarlan.inventory::lang.loose_carton'
+        prompt: 'Add new item'
+        span: auto
+        type: repeater
+        form:
+            fields:
+                carton:
+                    label: 'herzgarlan.inventory::lang.carton'
+                    span: auto
+                    type: number
+                pieces:
+                    label: 'herzgarlan.inventory::lang.pieces'
+                    span: auto
+                    type: number
+    photo:
+        label: 'herzgarlan.inventory::lang.products.photo'
+        span: auto
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        type: fileupload
