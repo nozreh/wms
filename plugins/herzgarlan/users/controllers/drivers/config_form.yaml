@@ -1,0 +1,11 @@
+name: Drivers
+modelClass: HerzGarlan\Users\Models\Drivers
+form: $/herzgarlan/users/models/drivers/fields.yaml
+defaultRedirect: herzgarlan/users/drivers
+create:
+    redirect: 'herzgarlan/users/drivers/update/:id'
+    redirectClose: herzgarlan/users/drivers
+update:
+    redirect: herzgarlan/users/drivers
+    redirectClose: herzgarlan/users/drivers
+preview: {  }

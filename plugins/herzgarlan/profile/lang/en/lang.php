@@ -2,7 +2,7 @@
     'plugin' => [
         'name' => 'Profile',
         'description' => 'Profile Tab extension of the User Module',
-        'author' => 'Herzon Garlan'
+        'author' => 'Herzon Garlan',
     ],
     'company' => 'Company',
     'contact_no' => 'Contact No.',
@@ -13,4 +13,5 @@
     'contact_name' => 'Contact Person Name',
     'contact_email' => 'Contact Person Email',
     'logo' => 'Company Logo',
+    'name' => 'Name'
 ];

@@ -14,7 +14,7 @@
         'depth' => 'Depth',
         'carton_qty' => 'Carton Quantity',
         'unit_qty' => 'Quantity per Carton',
-        'weight' => 'Weight',
+        'weight' => 'Weight per carton',
         'additional_info' => 'Additional Info',
         'barcode' => 'Barcode',
         'created_at' => 'Created Date',

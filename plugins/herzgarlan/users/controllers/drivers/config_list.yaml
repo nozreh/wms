@@ -1,0 +1,11 @@
+title: Drivers
+modelClass: HerzGarlan\Users\Models\Drivers
+list: $/herzgarlan/users/models/drivers/columns.yaml
+recordUrl: 'herzgarlan/users/drivers/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

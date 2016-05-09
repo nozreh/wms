@@ -10,11 +10,17 @@ class Products extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     protected $jsonable = ['loose_carton'];
-    //public $customer;
     /*
      * Validation
      */
     public $rules = [
+        'name' => 'required|between:3,255|unique:herzgarlan_inventory_products',
+        'code' => 'required|between:3,255',
+        'customer' => 'required',
+        'barcode' => 'required',
+        'description' => 'required',
+        'carton_quantity' => 'required|numeric',
+        'unit_quantity' => 'required|numeric',
     ];
 
     /*
@@ -23,11 +29,7 @@ class Products extends Model
      */
     public $timestamps = true;
 
-    /**
-     * @var string The database table used by the model.
-     */
     public $table = 'herzgarlan_inventory_products';
-
     /**
      * @var array Relations
      */

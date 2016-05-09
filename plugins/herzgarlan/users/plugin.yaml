@@ -1,0 +1,6 @@
+plugin:
+    name: Drivers
+    description: 'Drivers List'
+    author: 'Herzon Garlan'
+    icon: oc-icon-user-secret
+    homepage: ''

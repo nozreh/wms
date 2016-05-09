@@ -1,0 +1,21 @@
+columns:
+    name:
+        label: 'herzgarlan.users::lang.driver.name'
+        type: text
+        searchable: true
+        sortable: true
+    email:
+        label: 'herzgarlan.users::lang.driver.email'
+        type: text
+        searchable: true
+        sortable: true
+    contact_no:
+        label: 'herzgarlan.users::lang.driver.email'
+        type: text
+        searchable: true
+        sortable: true
+    fin:
+        label: 'herzgarlan.users::lang.driver.fin'
+        type: text
+        searchable: true
+        sortable: true
