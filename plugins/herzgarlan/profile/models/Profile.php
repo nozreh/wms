@@ -14,13 +14,17 @@ class Profile extends Model
      * Validation
      */
     public $rules = [
+    'contact_email' => 'between:6,255|email',
+    'logo'  => 'image'
+    ];
+    /*public $rules = [
         'company'       => 'required',
         'contact_name'  => 'required',
         'contact_email' => 'required|between:6,255|email',
         'contact_no'    => 'required|between:3,20',
         'registration_no' => 'required',
         'mailing_addr'  => 'required'
-    ];
+    ];*/
 
     /*
      * Disable timestamps by default.
