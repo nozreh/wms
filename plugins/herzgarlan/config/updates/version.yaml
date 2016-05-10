@@ -9,6 +9,3 @@
 1.0.4:
     - 'Created table herzgarlan_config_blocked_dates'
     - builder_table_create_herzgarlan_config_blocked_dates.php
-1.0.5:
-    - 'Created table herzgarlan_config_customer_rate'
-    - builder_table_create_herzgarlan_config_customer_rate.php
