@@ -14,8 +14,7 @@ class Profile extends Model
      * Validation
      */
     public $rules = [
-    'contact_email' => 'between:6,255|email',
-    'logo'  => 'image'
+    'contact_email' => 'between:6,255|email'
     ];
     /*public $rules = [
         'company'       => 'required',
