@@ -21,6 +21,9 @@ class Products extends Model
         'description' => 'required',
         'carton_quantity' => 'required|numeric',
         'unit_quantity' => 'required|numeric',
+        'carton' => 'numeric',
+        'pieces' => 'numeric',
+        'photo' => 'image'
     ];
 
     /*

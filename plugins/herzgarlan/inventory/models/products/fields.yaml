@@ -31,15 +31,11 @@ fields:
     carton_quantity:
         label: 'herzgarlan.inventory::lang.products.carton_qty'
         span: auto
-        default: '0'
         required: 1
-        type: number
     unit_quantity:
         label: 'herzgarlan.inventory::lang.products.unit_qty'
         span: auto
-        default: '0'
         required: 1
-        type: number
     dimension:
         label: 'herzgarlan.inventory::lang.products.dimension'
         span: auto

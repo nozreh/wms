@@ -19,8 +19,8 @@ class Plugin extends PluginBase
     	});
 		Event::listen('backend.list.extendColumns', function($widget) {
 
-            if (!$widget->getController() instanceof \RainLab\User\Controllers\Users) return;
-            if (!$widget->model instanceof \RainLab\User\Models\User) return;
+            if (!$widget->getController() instanceof UsersController) return;
+            if (!$widget->model instanceof UserModel) return;
 
             $columns = __DIR__ . '/models/profile/columns.yaml';
             $config = Yaml::parse(File::get($columns));
@@ -28,29 +28,36 @@ class Plugin extends PluginBase
 
         });
 
+        UsersController::extendFormFields(function($form, $model, $context){
+
+            if (!$model instanceof UserModel) return;
+            if (!$model->exists) return;
+
+            //Make sure we have a user model object
+            ProfileModel::getFromUser($model);
+
+            $fields = __DIR__ . '/models/profile/fields.yaml';
+            $config = Yaml::parse(File::get($fields));
+            $form->addTabFields($config['fields']);
+            $form->removeField('avatar');
+            $form->addSecondaryTabFields([
+                'profile[logo]' => [
+                        'label' => 'herzgarlan.profile::lang.logo',
+                        'mode'  => 'image',
+                        'useCaption'    => 'true',
+                        'imageWidth' => '260',
+                        'span' => 'auto',
+                        'type' => 'fileupload'
+                        ]
+            ]);
+        });
+
     	Event::listen('backend.form.extendFields', function($widget) 
         {
             if (!$widget->getController() instanceof UsersController) return;
             if (!$widget->model instanceof UserModel) return;
-            
-            //Make sure we have a user model object
-            ProfileModel::getFromUser($widget->model);
 
-            $fields = __DIR__ . '/models/profile/fields.yaml';
-            $config = Yaml::parse(File::get($fields));
-       		$widget->addTabFields($config['fields']);
        		$widget->removeField('avatar');
-       		$widget->addSecondaryTabFields([
-       			'profile[logo]' => [
-				        'label' => 'herzgarlan.profile::lang.logo',
-				        'mode'	=> 'image',
-				        'useCaption'	=> 'true',
-				        'imageWidth' => '260',
-				        'span' => 'auto',
-				        'type' => 'fileupload'
-				        ]
-        	]);
-
         });
 
     }

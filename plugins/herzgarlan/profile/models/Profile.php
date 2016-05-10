@@ -1,6 +1,7 @@
 <?php namespace HerzGarlan\Profile\Models;
 
 use Model;
+use RainLab\User\Models\User;
 
 /**
  * Model
@@ -13,7 +14,12 @@ class Profile extends Model
      * Validation
      */
     public $rules = [
-        'contact_email' => 'between:6,255|email'
+        'company'       => 'required',
+        'contact_name'  => 'required',
+        'contact_email' => 'required|between:6,255|email',
+        'contact_no'    => 'required|between:3,20',
+        'registration_no' => 'required',
+        'mailing_addr'  => 'required'
     ];
 
     /*
@@ -28,7 +34,7 @@ class Profile extends Model
     public $table = 'herzgarlan_profile_profiles';
 
     public $belongsTo = [
-        'user' => ['RainLab\User\Models\User']
+        'user' => ['RainLab\User\Models\User',  'table' => 'herzgarlan_profile_profiles',  'key' => 'user_id']
     ];
 
     public $attachOne = [
@@ -38,7 +44,7 @@ class Profile extends Model
     public static function getFromUser($user)
     {
         if($user->profile)
-            return $user->profile;
+        return $user->profile;
 
         $profile = new static;
         $profile->user = $user;

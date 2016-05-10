@@ -35,5 +35,7 @@
     ],
     'config' => [
         'manage_config' => 'Manage Config',
+        'customer' => 'Customer',
+        'rate' => 'Rate',
     ],
 ];

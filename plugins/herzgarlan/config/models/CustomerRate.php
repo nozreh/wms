@@ -1,11 +1,11 @@
-<?php namespace HerzGarlan\Users\Models;
+<?php namespace HerzGarlan\Config\Models;
 
 use Model;
 
 /**
  * Model
  */
-class Drivers extends Model
+class CustomerRate extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
@@ -13,9 +13,6 @@ class Drivers extends Model
      * Validation
      */
     public $rules = [
-        'name' => 'required',
-        'email' => 'required|email|unique:herzgarlan_users_drivers',
-        'contact_no' => 'required' 
     ];
 
     /*
@@ -27,5 +24,5 @@ class Drivers extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'herzgarlan_users_drivers';
+    public $table = 'herzgarlan_config_customer_rate';
 }

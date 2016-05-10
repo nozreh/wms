@@ -1,0 +1,8 @@
+fields:
+    customer_id:
+        label: 'herzgarlan.config::lang.config.customer'
+        span: auto
+        nameFrom: name
+        descriptionFrom: description
+        list: RainLab/Users/columns.yaml
+        type: recordfinder
