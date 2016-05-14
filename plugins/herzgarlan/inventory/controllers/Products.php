@@ -2,6 +2,7 @@
 
 use Backend\Classes\Controller;
 use BackendMenu;
+use HerzGarlan\Inventory\Models\ProductMovement;
 
 class Products extends Controller
 {
@@ -20,9 +21,4 @@ class Products extends Controller
         parent::__construct();
         BackendMenu::setContext('HerzGarlan.Inventory', 'inventory', 'products');
     }
-
-    public function getRandomCode(){
-        return str_random(10);
-    }
-
 }

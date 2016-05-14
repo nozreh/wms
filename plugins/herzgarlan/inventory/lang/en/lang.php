@@ -24,6 +24,6 @@
         'photo' => 'Photo',
     ],
     'loose_carton' => 'Loose Carton',
-    'carton' => 'Carton',
-    'pieces' => 'Pieces',
+    'carton' => 'Carton Quantity',
+    'pieces' => 'Quantity per Carton',
 ];

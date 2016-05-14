@@ -1,0 +1,24 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    id:
+        label: rainlab.user::lang.user.id
+        invisible: true
+
+    name:
+        label: 'herzgarlan.profile::lang.contact_name'
+        searchable: true
+
+    email:
+        label: rainlab.user::lang.user.email
+        searchable: true
+
+    company:
+        label: 'herzgarlan.profile::lang.company_name'
+        searchable: true
+
+    created_at:
+        label: 'herzgarlan.profile::lang.registered_on'

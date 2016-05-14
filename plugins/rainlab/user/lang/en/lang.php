@@ -12,7 +12,7 @@ return [
     'users' => [
         'menu_label' => 'Users',
         'all_users' => 'All Users',
-        'new_user' => 'New User',
+        'new_user' => 'New Customer',
         'list_title' => 'Manage Users',
         'activating' => 'Activating...',
         'trashed_hint_title' => 'User has deactivated their account',

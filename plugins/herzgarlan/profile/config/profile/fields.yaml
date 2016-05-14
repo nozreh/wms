@@ -1,0 +1,74 @@
+fields:
+    name:
+        label: 'herzgarlan.profile::lang.contact_name'
+        span: auto
+        required: 1
+
+    email:
+        label: 'herzgarlan.profile::lang.contact_email'
+        span: auto
+        required: 1
+
+    password:
+        label: rainlab.user::lang.user.reset_password
+        comment: rainlab.user::lang.user.reset_password_comment
+        type: password
+        span: left
+
+    password_confirmation:
+        label: rainlab.user::lang.user.confirm_password
+        comment: rainlab.user::lang.user.confirm_password_comment
+        type: password
+        span: right
+
+    username:
+        label: rainlab.user::lang.user.username
+        hidden: true
+        span: left
+
+    company:
+        label: 'herzgarlan.profile::lang.company_name'
+        span: full
+        required: 1
+        type: text
+
+    contact_no:
+        label: 'herzgarlan.profile::lang.contact_no'
+        span: auto
+        required: 1
+        type: text
+
+    registration_no:
+        label: 'herzgarlan.profile::lang.registration_no'
+        span: auto
+        required: 0
+        type: text
+
+    mailing_addr:
+        label: 'herzgarlan.profile::lang.mailing_addr'
+        size: tiny
+        span: full
+        required: 1
+        type: textarea
+
+    shipping_addr:
+        label: 'herzgarlan.profile::lang.shipping_addr'
+        size: tiny
+        span: full
+        type: textarea
+
+    groups:
+        label: rainlab.user::lang.user.groups
+        type: relation
+        emptyOption: rainlab.user::lang.user.empty_groups
+        span: left
+
+    logo:
+        label: 'herzgarlan.profile::lang.logo'
+        span: auto
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        type: fileupload

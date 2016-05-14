@@ -1,11 +1,11 @@
 <?php namespace HerzGarlan\Config\Models;
 
 use Model;
-use Flash;
+
 /**
  * Model
  */
-class BlockedDates extends Model
+class CustomerRate extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
@@ -24,16 +24,5 @@ class BlockedDates extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'herzgarlan_config_blocked_dates';
-
-    public function afterCreate()
-    {
-        Flash::success('Block dates has been created successfully.');
-    }
-
-    public function afterSave()
-    {
-        Flash::success('Block dates has been updated successfully.');
-    }
-
+    public $table = 'herzgarlan_config_customer_rate';
 }

@@ -34,8 +34,4 @@ registration_no:
     label: herzgarlan.profile::lang.user.registration_no
     tab: Profile
     span: right
-    
-zip:
-    label: herzgarlan.profile::lang.user.zip
-    tab: Profile
-    span: left
+

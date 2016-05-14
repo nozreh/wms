@@ -6,7 +6,7 @@
     'rate' => [
         'name' => 'Name',
         'slug' => 'Slug',
-        'value' => 'Value',
+        'value' => 'Rates(S$)',
         'description' => 'Description',
         'user_id' => 'User ID',
         'created_at' => 'Created Date',

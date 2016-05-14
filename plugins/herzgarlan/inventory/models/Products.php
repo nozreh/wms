@@ -9,6 +9,7 @@ use RainLab\User\Models\User as User;
 class Products extends Model
 {
     use \October\Rain\Database\Traits\Validation;
+    
     protected $jsonable = ['loose_carton'];
     /*
      * Validation
@@ -21,10 +22,12 @@ class Products extends Model
         'description' => 'required',
         'carton_quantity' => 'required|numeric',
         'unit_quantity' => 'required|numeric',
-        'carton' => 'numeric',
-        'pieces' => 'numeric',
-        'photo' => 'image'
+        'loose_carton' => 'numeric_loose_carton_qty'
     ];
+
+    public $customMessages = [
+        'numeric_loose_carton_qty' => 'Carton Quantity and Quantity per Carton fields should be all numeric.',
+    ] ;
 
     /*
      * Disable timestamps by default.
@@ -38,6 +41,22 @@ class Products extends Model
      */
     public $belongsTo = [
         'customer' => ['Rainlab\User\Models\User']
+    ];
+    public $belongsToMany = [
+        'product' => [
+            'HerzGarlan\Inventory\Models\Products',
+            'table' => 'herzgarlan_inventory_product_movement',
+            'pivot' => [
+                        'product_id', 
+                        'before_carton_qty', 
+                        'after_carton_qty', 
+                        'before_carton_qty', 
+                        'after_carton_qty',
+                        'reason', 
+                        'backend_user_id'
+                    ],
+            'pivotModel' => 'HerzGarlan\Inventory\Models\ProductMovementPivot'
+        ],
     ];
 
     public $attachMany = [

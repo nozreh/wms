@@ -12,3 +12,6 @@
 1.0.5:
     - 'Updated table herzgarlan_profile_profiles'
     - builder_table_update_herzgarlan_profile_profiles_3.php
+1.0.6:
+    - 'Add profile fieds table herzgarlan_profile_profiles'
+    - add_profiles_field_to_users_table.php

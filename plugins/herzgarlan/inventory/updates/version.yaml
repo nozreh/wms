@@ -6,3 +6,6 @@
 1.0.3:
     - 'Updated table herzgarlan_inventory_products added loose carton json field'
     - builder_table_update_herzgarlan_inventory_products.php
+1.0.4:
+    - 'Updated table herzgarlan_inventory_products updated weight per carton from decimal to string (to include unit)'
+    - builder_table_update_herzgarlan_inventory_products_2.php

@@ -1,5 +1,0 @@
-columns:
-    company:
-        label: 'herzgarlan.profile::lang.company'
-        relation: profile
-        select: company
