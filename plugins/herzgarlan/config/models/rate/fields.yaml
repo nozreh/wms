@@ -14,8 +14,17 @@ fields:
         label: 'herzgarlan.config::lang.rate.value'
         span: auto
         type: text
+    operator:
+        label: 'herzgarlan.config::lang.rate.operator'
+        options:
+            none: None
+            +: Add
+            '-': Deduct
+        span: auto
+        type: dropdown
+        comment: 'Operator to use for product movement.'
     short_description:
         label: 'herzgarlan.config::lang.rate.description'
         size: tiny
-        span: auto
+        span: full
         type: textarea

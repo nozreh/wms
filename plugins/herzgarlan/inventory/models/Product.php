@@ -6,7 +6,7 @@ use RainLab\User\Models\User as User;
 /**
  * Model
  */
-class Products extends Model
+class Product extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     
@@ -15,7 +15,7 @@ class Products extends Model
      * Validation
      */
     public $rules = [
-        'name' => 'required|between:3,255|unique:herzgarlan_inventory_products',
+        'name' => 'required|between:3,255|unique:herzgarlan_inventory_product',
         'code' => 'required|between:3,255',
         'customer' => 'required',
         'barcode' => 'required',
@@ -33,30 +33,18 @@ class Products extends Model
      * Disable timestamps by default.
      * Remove this line if timestamps are defined in the database table.
      */
-    public $timestamps = true;
+    public $timestamps = false;
 
-    public $table = 'herzgarlan_inventory_products';
+    public $table = 'herzgarlan_inventory_product';
     /**
      * @var array Relations
      */
     public $belongsTo = [
         'customer' => ['Rainlab\User\Models\User']
     ];
-    public $belongsToMany = [
-        'product' => [
-            'HerzGarlan\Inventory\Models\Products',
-            'table' => 'herzgarlan_inventory_product_movement',
-            'pivot' => [
-                        'product_id', 
-                        'before_carton_qty', 
-                        'after_carton_qty', 
-                        'before_carton_qty', 
-                        'after_carton_qty',
-                        'reason', 
-                        'backend_user_id'
-                    ],
-            'pivotModel' => 'HerzGarlan\Inventory\Models\ProductMovementPivot'
-        ],
+
+    public $hasMany = [
+        'productmovement' => ['HerzGarlan\Inventory\Models\ProductMovement'],
     ];
 
     public $attachMany = [

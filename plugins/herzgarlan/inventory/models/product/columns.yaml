@@ -1,31 +1,31 @@
 columns:
     name:
-        label: 'herzgarlan.inventory::lang.products.name'
+        label: 'herzgarlan.inventory::lang.product.name'
         type: text
         searchable: true
         sortable: true
     code:
-        label: 'herzgarlan.inventory::lang.products.code'
+        label: 'herzgarlan.inventory::lang.product.code'
         type: text
         searchable: true
         sortable: true
     customer:
-        label: 'herzgarlan.inventory::lang.products.customer'
+        label: 'herzgarlan.inventory::lang.product.customer'
         type: text
         relation: customer
         select: name
         searchable: true
         sortable: true
     barcode:
-        label: 'herzgarlan.inventory::lang.products.barcode'
+        label: 'herzgarlan.inventory::lang.product.barcode'
         type: text
         sortable: true
         searchable: true
     created_at:
-        label: 'herzgarlan.inventory::lang.products.created_at'
+        label: 'herzgarlan.inventory::lang.product.created_at'
         type: datetime
         sortable: true
     updated_at:
-        label: 'herzgarlan.inventory::lang.products.updated_at'
+        label: 'herzgarlan.inventory::lang.product.updated_at'
         type: datetime
         sortable: true

@@ -11,14 +11,20 @@ permissions:
 navigation:
     inventory:
         label: 'herzgarlan.inventory::lang.plugin.name'
-        url: herzgarlan/inventory/products
+        url: herzgarlan/inventory/product
         icon: icon-book
         permissions:
             - manage_products
         sideMenu:
             products:
-                label: 'herzgarlan.inventory::lang.products.menu_label'
-                url: herzgarlan/inventory/products
+                label: 'herzgarlan.inventory::lang.product.menu_label'
+                url: herzgarlan/inventory/product
                 icon: icon-shopping-cart
+                permissions:
+                    - manage_products
+            productmovement:
+                label: 'herzgarlan.inventory::lang.productmovement.menu_label'
+                url: herzgarlan/inventory/productmovement
+                icon: icon-table
                 permissions:
                     - manage_products

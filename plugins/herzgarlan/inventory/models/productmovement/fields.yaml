@@ -1,0 +1,33 @@
+fields:
+    reason:
+        label: Reason
+        span: full
+        type: text
+    after_carton:
+        label: 'Current Carton Qty'
+        span: auto
+        type: text
+    before_carton:
+        label: 'Previous Carton Qty'
+        span: auto
+        type: text
+    after_unit:
+        label: 'Current Quantity per carton'
+        span: auto
+        type: text
+    before_unit:
+        label: 'Previous Quantity per carton'
+        span: auto
+        type: text
+    after_loose_carton:
+        label: 'Current Loose Carton'
+        span: auto
+        type: partial
+        path: $/herzgarlan/inventory/controllers/productmovement/_field_loose_carton.htm
+        tab: 'Loose Carton'
+    before_loose_carton:
+        label: 'Previous Loose Carton'
+        span: auto
+        type: partial
+        path: $/herzgarlan/inventory/controllers/productmovement/_field_loose_carton.htm
+        tab: 'Loose Carton'

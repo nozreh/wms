@@ -1,0 +1,14 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+productmovement:
+    label: Product Movement
+    manage:
+        form: $/herzgarlan/inventory/models/productmovement/fields.yaml
+        list: $/herzgarlan/inventory/models/productmovement/columns.yaml
+    view:
+        list: $/herzgarlan/inventory/models/productmovement/view_columns.yaml
+        toolbarButtons: create|delete
+    readOnly: true
+    showSearch: true

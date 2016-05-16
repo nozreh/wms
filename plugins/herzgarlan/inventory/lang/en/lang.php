@@ -3,7 +3,7 @@
         'name' => 'Inventory',
         'description' => 'Inventory module for WMS',
     ],
-    'products' => [
+    'product' => [
         'customer' => 'Customer',
         'name' => 'Name',
         'code' => 'Code',
@@ -26,4 +26,10 @@
     'loose_carton' => 'Loose Carton',
     'carton' => 'Carton Quantity',
     'pieces' => 'Quantity per Carton',
+    'productmovement' => [
+        'reason' => 'Reason',
+    ],
+    'productmovement' => [
+        'menu_label' => 'Product Movement'
+    ]
 ];

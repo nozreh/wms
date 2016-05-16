@@ -13,6 +13,7 @@
         'updated_at' => 'Updated Date',
         'manage_rate' => 'Manage Rates',
         'rates' => 'Rates',
+        'operator' => 'Operator',
     ],
     'timeslot' => [
         'day' => 'Day',

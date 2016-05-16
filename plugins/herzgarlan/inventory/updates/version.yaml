@@ -9,3 +9,12 @@
 1.0.4:
     - 'Updated table herzgarlan_inventory_products updated weight per carton from decimal to string (to include unit)'
     - builder_table_update_herzgarlan_inventory_products_2.php
+1.0.5:
+    - 'Created table herzgarlan_inventory_product_movement'
+    - builder_table_create_herzgarlan_inventory_product_movement.php
+1.0.6:
+    - 'Updated table herzgarlan_inventory_products'
+    - builder_table_update_herzgarlan_inventory_product.php
+1.0.7:
+    - 'Updated table herzgarlan_inventory_product_movement added loose carton'
+    - builder_table_update_herzgarlan_inventory_product_movement.php

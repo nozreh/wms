@@ -12,3 +12,6 @@
 1.0.5:
     - 'Created table herzgarlan_config_customer_rate'
     - builder_table_create_herzgarlan_config_customer_rate.php
+1.0.6:
+    - 'Updated table herzgarlan_config_rates added operator'
+    - builder_table_update_herzgarlan_config_rates.php

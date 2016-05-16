@@ -1,7 +1,7 @@
-title: Products
-modelClass: HerzGarlan\Inventory\Models\Products
-list: $/herzgarlan/inventory/models/products/columns.yaml
-recordUrl: 'herzgarlan/inventory/products/update/:id'
+title: Product
+modelClass: HerzGarlan\Inventory\Models\Product
+list: $/herzgarlan/inventory/models/product/columns.yaml
+recordUrl: 'herzgarlan/inventory/product/update/:id'
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 showCheckboxes: true

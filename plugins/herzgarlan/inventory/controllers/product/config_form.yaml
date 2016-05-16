@@ -1,0 +1,11 @@
+name: Product
+modelClass: HerzGarlan\Inventory\Models\Product
+form: $/herzgarlan/inventory/models/product/fields.yaml
+defaultRedirect: herzgarlan/inventory/product
+create:
+    redirect: 'herzgarlan/inventory/product/update/:id'
+    redirectClose: herzgarlan/inventory/product
+update:
+    redirect: herzgarlan/inventory/product
+    redirectClose: herzgarlan/inventory/product
+preview: {  }

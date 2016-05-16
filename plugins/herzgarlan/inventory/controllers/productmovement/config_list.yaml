@@ -1,0 +1,12 @@
+title: Product Movement
+modelClass: HerzGarlan\Inventory\Models\ProductMovement
+list: $/herzgarlan/inventory/models/productmovement/columns.yaml
+recordUrl: 'herzgarlan/inventory/productmovement'
+noRecordsMessage: 'backend::lang.list.no_records'
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+defaultSort:
+    column: created_at
+    direction: desc

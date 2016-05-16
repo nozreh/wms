@@ -1,11 +1,11 @@
 fields:
     name:
-        label: 'herzgarlan.inventory::lang.products.name'
+        label: 'herzgarlan.inventory::lang.product.name'
         span: auto
         required: 1
         type: text
     code:
-        label: 'herzgarlan.inventory::lang.products.code'
+        label: 'herzgarlan.inventory::lang.product.code'
         span: auto
         required: 1
         preset:
@@ -13,14 +13,14 @@ fields:
             type: slug
         type: text
     customer:
-        label: 'herzgarlan.inventory::lang.products.customer'
+        label: 'herzgarlan.inventory::lang.product.customer'
         nameFrom: company
         descriptionFrom: description
         span: auto
         required: 1
         type: relation
     barcode:
-        label: 'herzgarlan.inventory::lang.products.barcode'
+        label: 'herzgarlan.inventory::lang.product.barcode'
         span: auto
         type: text
     description:
@@ -29,25 +29,27 @@ fields:
         span: full
         type: textarea
     carton_quantity:
-        label: 'herzgarlan.inventory::lang.products.carton_qty'
+        label: 'herzgarlan.inventory::lang.product.carton_qty'
         span: auto
         required: 1
+        type: text
     unit_quantity:
-        label: 'herzgarlan.inventory::lang.products.unit_qty'
+        label: 'herzgarlan.inventory::lang.product.unit_qty'
         span: auto
         required: 1
+        type: text
     dimension:
-        label: 'herzgarlan.inventory::lang.products.dimension'
+        label: 'herzgarlan.inventory::lang.product.dimension'
         span: auto
         type: text
         commentAbove: 'W x H x D (20cm x 40cm x 50cm)'
     weight:
-        label: 'herzgarlan.inventory::lang.products.weight'
+        label: 'herzgarlan.inventory::lang.product.weight'
         span: auto
         type: text
         commentAbove: 'Please indicate unit of measurement ( e.g. 500g )'
     additional_info:
-        label: 'herzgarlan.inventory::lang.products.additional_info'
+        label: 'herzgarlan.inventory::lang.product.additional_info'
         size: tiny
         span: full
         type: textarea
@@ -67,7 +69,7 @@ fields:
                     span: auto
                     type: number
     photo:
-        label: 'herzgarlan.inventory::lang.products.photo'
+        label: 'herzgarlan.inventory::lang.product.photo'
         span: auto
         mode: image
         useCaption: true
@@ -75,3 +77,10 @@ fields:
             mode: crop
             extension: auto
         type: fileupload
+tabs:
+    fields:
+        productmovement:
+            span: full
+            path: field_productmovement
+            type: partial
+            tab: 'Product Movement'
