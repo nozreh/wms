@@ -1,9 +1,16 @@
 description = "Default layout"
+
+[account]
+redirect = "products"
+paramCode = "code"
+
+[session]
+security = "all"
 ==
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Flat UI - {{ this.page.title }}</title>
+        <title>WMS - {{ this.page.title }}</title>
         <meta name="author" content="October CMS">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="{{ 'assets/images/logo.png'|theme }}" />
@@ -26,10 +33,10 @@ description = "Default layout"
             {% page %}
         </div>
 
-        <!-- Mailing List -->
+        <!-- Mailing List
         <section id="layout-subscribe" class="subscribe-form">
-            {% partial "subscribe" %}
-        </section>
+             partial "subscribe" 
+        </section> -->
 
         <!-- Footer -->
         <footer id="layout-footer">

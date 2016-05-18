@@ -1,0 +1,9 @@
+[viewBag]
+==
+{% if not user %}
+    {% partial __SELF__ ~ '::register' %}
+{% else %}
+
+    {% partial __SELF__ ~ '::activation_check' %}
+
+{% endif %}

@@ -1,0 +1,22 @@
+title = "Product Movements"
+url = "/productmovements/:product_id"
+layout = "default"
+is_hidden = 0
+
+[session]
+security = "all"
+
+[viewProductMovement]
+
+[viewBag]
+activeMenu = "products"
+==
+<section id="layout-title">
+    <div class="container">
+        <h3>Product Movements</h3>
+    </div>
+</section>
+
+<div class="row">
+    {% component 'viewProductMovement' %}
+</div>

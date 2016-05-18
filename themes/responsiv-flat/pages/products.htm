@@ -1,0 +1,24 @@
+title = "Products"
+url = "/products"
+layout = "default"
+description = "List all the customer's products"
+is_hidden = 0
+
+[session]
+security = "user"
+redirect = "signin"
+
+[viewProduct]
+
+[viewBag]
+activeMenu = "products"
+==
+<section id="layout-title">
+    <div class="container">
+        <h3>Products</h3>
+    </div>
+</section>
+
+<div class="row">
+    {% component 'viewProduct' %}
+</div>

@@ -1,0 +1,63 @@
+[viewBag]
+
+
+[account]
+redirect = "home"
+paramCode = "code"
+
+[session]
+security = "all"
+==
+<div class="col-sm-6 wow fadeInRight" id="registerForm">
+    <div class="signin-form">
+    {% if input('code') is empty %}
+        <form data-request="onRegister">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                    name="name"
+                    type="text"
+                    class="form-control signin-field"
+                    value=""
+                    placeholder="Enter your name"
+                    id="signin-name" />
+                </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                    name="email"
+                    type="email"
+                    class="form-control signin-field"
+                    value=""
+                    placeholder="Enter your email"
+                    id="signin-email" />
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                    name="password"
+                    type="password"
+                    class="form-control signin-field"
+                    value=""
+                    placeholder="Password"
+                    id="signin-pass" />
+            </div>
+            
+            <button type="submit" class="btn btn-block btn-info">Sign Up</button>
+        </form>
+        <div class="signin-link">
+            By signing up you agree to <a href="/terms">Terms of Use</a> and <a href="/privacy">Privacy Policy</a>
+        </div>
+         {% else %}
+            <form data-request="onActivate" data-request-success="window.location.href = '/'">
+                <div class="input-group">
+                  <span class="input-group-addon">Code</span>
+                  <input type="code" name="code" class="form-control" placeholder="Enter activation code" value="{{ input('code') }}">
+                </div>
+                <button type="submit" class="form-control">Activate</button>
+            </form>
+        {% endif %}
+    </div>
+</div>

@@ -1,0 +1,32 @@
+==
+<form data-request="onSignin">
+<div class="signin-form">
+    <div class="form-group">
+        <input
+            type="text"
+            class="form-control signin-field"
+            value=""
+            placeholder="Enter your {{ loginAttributeLabel|lower }}"
+            name="login"
+            id="userSigninLogin"
+            />
+        <label class="signin-field-icon fui-mail" for="userSigninLogin"></label>
+    </div>
+
+    <div class="form-group">
+        <input
+            type="password"
+            class="form-control signin-field"
+            value=""
+            placeholder="Password"
+            id="userSigninPassword"
+            name="password"
+            />
+        <label class="signin-field-icon fui-lock" for="userSigninPassword"></label>
+    </div>
+
+    <button type="submit"class="btn btn-primary btn-lg btn-block">Login</button>
+
+    <a class="signin-link" href="/forgot-password">Lost your password?</a>
+</div>
+</form>
