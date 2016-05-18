@@ -1,0 +1,44 @@
+{% set productmovements = __SELF__.productmovements %}
+<div class="container shopping-cart">
+  <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Reason</th>
+            <th>
+              Previous Carton Qty
+            </th>
+            <th>
+              Current Carton Qty
+            </th>
+            <th>
+              Previous Qty per Carton
+            </th>
+            <th>
+              Current Qty per Carton
+            </th>
+            <th>
+              Moved By
+            </th>
+            <th>
+             Moved On
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for productmovement in productmovements %}
+    		<tr>
+    		  <td class="text-nowrap" scope="row">{{ productmovement['attributes']['product_name'] }}</td>
+          <td class="text-nowrap" scope="row">{{ productmovement['attributes']['before_carton'] }}</td>
+          <td class="text-nowrap" scope="row">{{ productmovement['attributes']['after_carton'] }}</td>
+          <td class="text-nowrap" scope="row">{{ productmovement['attributes']['before_unit'] }}</td>
+          <td class="text-nowrap" scope="row">{{ productmovement['attributes']['after_unit'] }}</td>
+          <td class="text-nowrap" scope="row">{{ productmovement['attributes']['backend_user_name']}}</td>
+          <td class="text-nowrap" scope="row">{{ productmovement['attributes']['created_at']}}</td>
+    		</tr>
+  		{% endfor %}  
+        </tbody>
+      </table>
+  </div>
+</div>
+{{ productmovements | raw }}

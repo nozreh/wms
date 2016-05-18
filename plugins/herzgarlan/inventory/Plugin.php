@@ -54,6 +54,10 @@ class Plugin extends PluginBase
 
     public function registerComponents()
     {
+        return [
+            'HerzGarlan\Inventory\Components\ViewProduct' => 'viewProduct',
+            'HerzGarlan\Inventory\Components\ViewProductMovement' => 'viewProductMovement'
+        ];
     }
 
     public function registerSettings()

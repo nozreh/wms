@@ -1,0 +1,40 @@
+{% set products = __SELF__.products %}
+<div class="container shopping-cart">
+  <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>
+              Name
+            </th>
+            <th>
+              Part No.
+            </th>
+            <th>
+             Balance
+            </th>
+            <th>
+            Date Last Movement
+            </th>
+            <th>
+             Action
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+    		<tr>
+    		  <td class="text-nowrap" scope="row">{{ product['attributes']['id'] }}</td>
+          <td class="text-nowrap" scope="row">{{ product['attributes']['name'] }}</td>
+          <td class="text-nowrap" scope="row">{{ product['attributes']['barcode']}}</td>
+          <td class="text-nowrap" scope="row">{{ product['attributes']['total_qty']}}</td>
+          <td class="text-nowrap" scope="row">{{ product['attributes']['last_moved']}}</td>
+          <td class="text-nowrap" scope="row"><a class="btn btn-success" href="/productmovements/{{ product['attributes']['id'] }}">View Product Movements</a></td>
+    		</tr>
+  		{% endfor %}  
+        </tbody>
+      </table>
+  </div>
+</div>
+{{ products | raw }}

@@ -16,7 +16,7 @@
         'unit_qty' => 'Quantity per Carton',
         'weight' => 'Weight per carton',
         'additional_info' => 'Additional Info',
-        'barcode' => 'Barcode',
+        'barcode' => 'Part No.',
         'created_at' => 'Created Date',
         'updated_at' => 'Updated Date',
         'manage_products' => 'Manage Products',
