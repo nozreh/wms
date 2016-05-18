@@ -25,7 +25,7 @@ class ViewProduct extends ComponentBase
         foreach ($products as $key => $product)
         {
             $productmovement = ProductMovement::where('product_id', $product->id)->get();
-            $last_index = count($productmovement) - 1;
+            $last_index = count($productmovement) > 0 ? count($productmovement) - 1 : 0;
             $main_qty =  (int)$productmovement[$last_index]['after_carton'] * (int)$productmovement[$last_index]['after_unit'];
             $loose_carton_qty = 0;
 

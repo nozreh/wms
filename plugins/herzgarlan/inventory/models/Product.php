@@ -2,6 +2,7 @@
 
 use Model;
 use RainLab\User\Models\User as User;
+use HerzGarlan\Inventory\Models\ProductMovement;
 
 /**
  * Model
@@ -33,7 +34,7 @@ class Product extends Model
      * Disable timestamps by default.
      * Remove this line if timestamps are defined in the database table.
      */
-    public $timestamps = false;
+    public $timestamps = true;
 
     public $table = 'herzgarlan_inventory_product';
     /**
@@ -50,4 +51,21 @@ class Product extends Model
     public $attachMany = [
         'photo' => ['System\Models\File']
     ];
+
+    public static function getTotalBalance($product_id)
+    {
+        $product = Product::where('id', $product_id)->get();
+        $productmovement = ProductMovement::where('product_id', $product_id)->get();
+        $last_index = count($productmovement) > 0 ? count($productmovement) - 1 : 0;
+        $main_qty =  (int)$productmovement[$last_index]['after_carton'] * (int)$productmovement[$last_index]['after_unit'];
+        $total_qty = 0;
+        $loose_carton_qty = 0;
+
+        foreach ($productmovement[$last_index]['after_loose_carton'] as $carton) {
+            $loose_carton_qty = $loose_carton_qty + ( (int)$carton['carton'] * (int)$carton['pieces'] );
+        }
+        $total_qty = $main_qty + $loose_carton_qty;
+
+        return $total_qty;
+    }
 }
