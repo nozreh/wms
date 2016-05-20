@@ -1,4 +1,4 @@
-title: BlockedDates
+title: Blocked Date
 modelClass: HerzGarlan\Config\Models\BlockedDates
 list: $/herzgarlan/config/models/blockeddates/columns.yaml
 recordUrl: 'herzgarlan/config/blockeddates/update/:id'

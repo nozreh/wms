@@ -17,8 +17,8 @@ class Plugin extends PluginBase
 		        $validator = Validator::make(
 		            $v,
 		            [
-		                'carton' => 'numeric',
-		                'pieces' => 'numeric'
+		                'carton' => 'numeric|required',
+		                'pieces' => 'numeric|required'
 		            ]
 		        );
 		        if ($validator->fails())

@@ -68,4 +68,9 @@ class Product extends Model
 
         return $total_qty;
     }
+
+    public function getCustomerOptions()
+    {
+        return User::where('is_activated', '=', 1)->orderBy('company','asc')->lists('company','id');
+    }
 }

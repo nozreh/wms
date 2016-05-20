@@ -28,12 +28,12 @@ class BlockedDates extends Model
 
     public function afterCreate()
     {
-        Flash::success('Block dates has been created successfully.');
+        Flash::success('Blocked dates has been created successfully.');
     }
 
     public function afterSave()
     {
-        Flash::success('Block dates has been updated successfully.');
+        Flash::success('Blocked dates has been updated successfully.');
     }
 
 }

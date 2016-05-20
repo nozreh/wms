@@ -14,6 +14,7 @@
         'manage_rate' => 'Manage Rates',
         'rates' => 'Rates',
         'operator' => 'Operator',
+        'operator_comment' => 'Operator to use for any changes to inventory (e.g. Inbound = Add)'
     ],
     'timeslot' => [
         'day' => 'Day',

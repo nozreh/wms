@@ -5,6 +5,7 @@
     ],
     'product' => [
         'customer' => 'Customer',
+        'customer_placeholder' => 'Select Customer',
         'name' => 'Name',
         'code' => 'Code',
         'description' => 'Description',
@@ -16,7 +17,7 @@
         'unit_qty' => 'Quantity per Carton',
         'weight' => 'Weight per carton',
         'additional_info' => 'Additional Info',
-        'barcode' => 'Part No.',
+        'barcode' => 'Barcode No.',
         'created_at' => 'Created Date',
         'updated_at' => 'Updated Date',
         'manage_products' => 'Manage Products',

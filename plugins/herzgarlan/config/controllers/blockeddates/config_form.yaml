@@ -1,4 +1,4 @@
-name: BlockedDates
+name: Blocked Date
 modelClass: HerzGarlan\Config\Models\BlockedDates
 form: $/herzgarlan/config/models/blockeddates/fields.yaml
 defaultRedirect: herzgarlan/config/blockeddates

@@ -3,22 +3,27 @@ fields:
         label: Reason
         span: full
         type: text
+        disabled: true
     after_carton:
         label: 'Current Carton Qty'
         span: auto
         type: text
+        disabled: true
     before_carton:
         label: 'Previous Carton Qty'
         span: auto
         type: text
+        disabled: true
     after_unit:
         label: 'Current Quantity per carton'
         span: auto
         type: text
+        disabled: true
     before_unit:
         label: 'Previous Quantity per carton'
         span: auto
         type: text
+        disabled: true
     after_loose_carton:
         label: 'Current Loose Carton'
         span: auto

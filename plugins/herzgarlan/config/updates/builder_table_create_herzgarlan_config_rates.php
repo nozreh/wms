@@ -13,7 +13,7 @@ class BuilderTableCreateHerzgarlanConfigRates extends Migration
             $table->increments('id')->unsigned();
             $table->string('slug');
             $table->string('name');
-            $table->decimal('value', 10, 2)->default(0.00);
+            $table->decimal('value', 8, 2)->default(0.00);
             $table->text('short_description')->nullable();
             $table->timestamp('created_at');
             $table->timestamp('updated_at');
