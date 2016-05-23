@@ -3,13 +3,13 @@ url = "/productmovements/:product_id"
 layout = "default"
 is_hidden = 0
 
+[viewBag]
+activeMenu = "products"
+
 [session]
 security = "all"
 
 [ViewProductMovement]
-
-[viewBag]
-activeMenu = "products"
 ==
 <section id="layout-title">
     <div class="container">
@@ -18,5 +18,5 @@ activeMenu = "products"
 </section>
 
 <div class="row">
-    {% component 'viewProductMovement' %}
+    {% component 'ViewProductMovement' %}
 </div>

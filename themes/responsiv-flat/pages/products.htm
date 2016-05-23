@@ -4,14 +4,14 @@ layout = "default"
 description = "List all the customer's products"
 is_hidden = 0
 
+[viewBag]
+activeMenu = "products"
+
 [session]
 security = "user"
 redirect = "signin"
 
 [ViewProduct]
-
-[viewBag]
-activeMenu = "products"
 ==
 <section id="layout-title">
     <div class="container">
@@ -20,5 +20,5 @@ activeMenu = "products"
 </section>
 
 <div class="row">
-    {% component 'viewProduct' %}
+    {% component 'ViewProduct' %}
 </div>
