@@ -23,6 +23,7 @@
           </tr>
         </thead>
         <tbody>
+      {% if products is not empty %}
         {% for product in products %}
     		<tr>
     		  <td class="text-nowrap" scope="row">{{ product['attributes']['id'] }}</td>
@@ -32,7 +33,12 @@
           <td class="text-nowrap" scope="row">{{ product['attributes']['last_moved']}}</td>
           <td class="text-nowrap" scope="row"><a class="btn btn-success" href="/productmovements/{{ product['attributes']['id'] }}">View Product Movements</a></td>
     		</tr>
-  		{% endfor %}  
+  		  {% endfor %} 
+      {% else %}
+        <tr>
+          <td class="text-center" scope="row" colspan="6">No Products available</td>
+        </tr>
+      {% endif %} 
         </tbody>
       </table>
   </div>

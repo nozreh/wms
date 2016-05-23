@@ -26,6 +26,7 @@
           </tr>
         </thead>
         <tbody>
+      {% if productmovements is not empty %}
         {% for productmovement in productmovements %}
     		<tr>
     		  <td class="text-nowrap" scope="row">{{ productmovement['attributes']['product_name'] }}</td>
@@ -36,7 +37,12 @@
           <td class="text-nowrap" scope="row">{{ productmovement['attributes']['backend_user_name']}}</td>
           <td class="text-nowrap" scope="row">{{ productmovement['attributes']['created_at']}}</td>
     		</tr>
-  		{% endfor %}  
+  		  {% endfor %}
+      {% else %}
+        <tr>
+          <td class="text-center" scope="row" colspan="6">No Product movements available</td>
+        </tr>
+      {% endif %} 
         </tbody>
       </table>
   </div>
