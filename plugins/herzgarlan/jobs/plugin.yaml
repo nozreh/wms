@@ -1,0 +1,24 @@
+plugin:
+    name: 'herzgarlan.jobs::lang.plugin.name'
+    description: 'herzgarlan.jobs::lang.plugin.description'
+    author: 'Herzon Garlan'
+    icon: oc-icon-tasks
+    homepage: ''
+navigation:
+    jobs:
+        label: 'herzgarlan.jobs::lang.jobs'
+        url: herzgarlan/jobs/deliveryorder
+        icon: icon-tasks
+        permissions:
+            - manage_jobs
+        sideMenu:
+            delivery_order:
+                label: 'herzgarlan.jobs::lang.delivery_order'
+                url: herzgarlan/jobs/deliveryorder
+                icon: icon-file-o
+                permissions:
+                    - manage_jobs
+permissions:
+    manage_jobs:
+        tab: 'herzgarlan.jobs::lang.jobs'
+        label: 'herzgarlan.jobs::lang.permission.manage_jobs'

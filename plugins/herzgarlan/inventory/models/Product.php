@@ -46,6 +46,7 @@ class Product extends Model
 
     public $hasMany = [
         'productmovement' => ['HerzGarlan\Inventory\Models\ProductMovement'],
+        'deliveryorder' => ['HerzGarlan\Jobs\Models\DeliveryOrder']
     ];
 
     public $attachMany = [
@@ -72,5 +73,21 @@ class Product extends Model
     public function getCustomerOptions()
     {
         return User::where('is_activated', '=', 1)->orderBy('company','asc')->lists('company','id');
+    }
+
+    /**
+     * @var array Cache for nameList() method used in DeliverOrder model
+     */
+    protected static $nameList = [];
+    public static function getNameList($customerId)
+    {
+        if (isset(self::$nameList[$customerId])) {
+            return self::$nameList[$customerId];
+        }
+        return self::$nameList[$customerId] = self::whereCustomerId($customerId)->lists('name', 'id');
+    }
+    public static function formSelect($name, $customerId = null, $selectedValue = null, $options = [])
+    {
+        return Form::select($name, self::getNameList($customerId), $selectedValue, $options);
     }
 }

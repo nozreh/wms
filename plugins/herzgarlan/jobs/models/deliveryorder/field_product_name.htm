@@ -1,0 +1,10 @@
+<div class="layout-row min-size">
+	<?php 
+		if($value > 0){
+			$product = HerzGarlan\Inventory\Models\Product::where('id',$value)->get();
+			print $product[0]['name'];
+		}else{
+			print $record['product_info'];
+		}
+	?>
+</div>

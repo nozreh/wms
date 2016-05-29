@@ -1,0 +1,6 @@
+<div class="layout-row min-size">
+	<?php 
+		$product = Rainlab\User\Models\User::where('id',$value)->get();
+		print $product[0]['company'];
+	?>
+</div>

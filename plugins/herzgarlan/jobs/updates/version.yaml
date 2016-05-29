@@ -1,0 +1,8 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table herzgarlan_jobs_delivery_order'
+    - builder_table_create_herzgarlan_jobs_delivery_order.php
+1.0.3:
+    - 'Created table herzgarlan_jobs_delivery_order_rates'
+    - builder_table_create_herzgarlan_jobs_delivery_order_rates.php

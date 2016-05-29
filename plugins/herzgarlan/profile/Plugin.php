@@ -17,7 +17,7 @@ class Plugin extends PluginBase
     public function boot()
     {
     	UserModel::extend(function($model){
-    		$model->attachOne['logo'] = ['System\Models\File'];
+    		$model->attachOne['logo'] = ['System\Models\File', 'delete' => true];
             $model->rules = [
                 'name'     => 'required|between:2,255',
                 'email'    => 'required|between:6,255|email|unique:users',

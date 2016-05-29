@@ -20,6 +20,10 @@ class Rate extends Model
         'backend_user' => 'Backend\Models\User'
     ];
 
+    public $belongsToMany = [
+        'delivery_order' => ['HerzGarlan\Jobs\Models\DeliveryOrder', 'table' => 'herzgarlan_jobs_delivery_order', 'delete' => true]
+    ];
+
     /**
      * @var string The database table used by the model.
      */

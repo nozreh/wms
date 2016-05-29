@@ -1,0 +1,5 @@
+messages:
+	order_date.required: 'The Delivery Date field is required.'
+	user.required: 'The Customer field is required.'
+	addr_from.required: 'The From Address field is required.'
+	addr_to.required: 'The Destination Address field is required.'

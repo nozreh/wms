@@ -19,6 +19,7 @@ columns:
     company:
         label: 'herzgarlan.profile::lang.company_name'
         searchable: true
+        order: asc
 
     created_at:
         label: 'herzgarlan.profile::lang.registered_on'

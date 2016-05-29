@@ -1,0 +1,11 @@
+title: Delivery Order
+modelClass: HerzGarlan\Jobs\Models\DeliveryOrder
+list: $/herzgarlan/jobs/models/deliveryorder/columns.yaml
+recordUrl: 'herzgarlan/jobs/deliveryorder/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
