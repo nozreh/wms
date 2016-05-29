@@ -16,6 +16,7 @@ fields:
         type: number
     operator:
         label: 'herzgarlan.config::lang.rate.operator'
+        hidden: true
         options:
             none: None
             +: Add
