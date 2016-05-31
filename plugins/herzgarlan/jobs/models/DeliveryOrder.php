@@ -26,7 +26,9 @@ class DeliveryOrder extends Model
         'order_date' => 'required|after:now',
         'user' => 'required',
         'addr_from' => 'required',
+        'postal_from' => 'required|digits:6|numeric',
         'addr_to' => 'required',
+        'postal_to' => 'required|digits:6|numeric',
     ];
 
     public $customMessages = [
@@ -34,7 +36,13 @@ class DeliveryOrder extends Model
        'order_date.after' => 'The Delivery Date must be a future date.',
        'user.required' => 'The Customer field is required.',
        'addr_from.required' => 'The From Address field is required.',
-       'addr_to.required' => 'The Destination Address field is required.'
+       'addr_to.required' => 'The Destination Address field is required.',
+       'postal_from.required' => 'The From Address postal code field is required.',
+       'postal_to.required' => 'The Destination Address postal code field is required.',
+       'postal_from.numeric' => 'The From Address Postal code must contain numbers only.',
+       'postal_to.numeric' => 'The From Address Postal code must contain numbers only.',
+       'postal_from.digits' => 'Invalid format for From Address Postal code.',
+       'postal_to.digits' => 'Invalid format for Destination Address Postal code.'
     ];
 
     public $fillable = [
@@ -120,7 +128,7 @@ class DeliveryOrder extends Model
      * @Events.
      */
 
-    public function beforeValidate()
+    public function afterValidate()
     {
         $inputs = Input::get('DeliveryOrder');
         $rates = is_array( $inputs['rates'] ) ? true : false;
@@ -134,14 +142,17 @@ class DeliveryOrder extends Model
             // check the selected date against Blocked Dates config
             $isBlockedDate = JobsHelper::isBlockedDate($this->order_date);
             if($isBlockedDate){
-                throw new ValidationException(['order_date' => 'Selected delivery date is blocked please select another date.']);
+                throw new ValidationException(['order_date' => 'The selected delivery date and time is blocked please select another date.']);
             }
         }
 
-        // Make sure Product or Product info is not both empty
-        if( empty($this->product_id) AND empty($inputs['product_info']) )
+        if(!empty($inputs['addr_from'] && $inputs['addr_to']))
         {
-            throw new ValidationException(['product_info' => 'Please select a Product or fill up the Product Info field.']);
+            // Make sure Product or Product info is not both empty
+            if( empty($this->product_id) AND empty($inputs['product_info']) )
+            {
+                throw new ValidationException(['product_info' => 'Please select a Product or fill up the Product Info field.']);
+            }
         }
 
         $sessionKey = uniqid('session_key', true);

@@ -2,6 +2,9 @@
 
 use Model;
 use Flash;
+use Input;
+use ValidationException;
+use HerzGarlan\Config\Classes\DatesHelper;
 /**
  * Model
  */
@@ -13,6 +16,8 @@ class BlockedDates extends Model
      * Validation
      */
     public $rules = [
+    'date_start' => 'required|after:now',
+    'date_end' => 'required|after:now',
     ];
 
     /*
@@ -21,10 +26,26 @@ class BlockedDates extends Model
      */
     public $timestamps = false;
 
+    protected $dates = ['date_start','date_end'];
+
     /**
      * @var string The database table used by the model.
      */
     public $table = 'herzgarlan_config_blocked_dates';
+
+    public function beforeValidate()
+    {
+        $inputs = Input::get('BlockedDates');
+
+        if(!empty($inputs['date_start']) AND !empty($inputs['date_end']))
+        {
+            // check the selected date against Blocked Dates config
+            $isValidDateRange = DatesHelper::isValidDateRange($this->date_start, $this->date_end);
+           if(!$isValidDateRange){
+                throw new ValidationException(['date_end' => 'End date must be greater than the start date.']);
+            }
+        }
+    }
 
     public function afterCreate()
     {

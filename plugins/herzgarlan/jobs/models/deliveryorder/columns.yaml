@@ -9,13 +9,23 @@ columns:
         type: partial
         searchable: true
         sortable: true
-        path: '~/plugins/herzgarlan/jobs/models/deliveryorder/field_product_name.htm'
+        path: ~/plugins/herzgarlan/jobs/models/deliveryorder/field_product_name.htm
     user_id:
         label: 'herzgarlan.jobs::lang.customer'
         type: partial
         searchable: true
         sortable: true
-        path: '~/plugins/herzgarlan/jobs/models/deliveryorder/field_customer.htm'
+        path: ~/plugins/herzgarlan/jobs/models/deliveryorder/field_customer.htm
+    postal_from:
+        label: 'herzgarlan.jobs::lang.postal_from'
+        type: number
+        searchable: true
+        sortable: true
+    postal_to:
+        label: 'herzgarlan.jobs::lang.postal_to'
+        type: number
+        searchable: true
+        sortable: true
     order_date:
         label: 'herzgarlan.jobs::lang.order_date'
         type: datetime
@@ -29,3 +39,4 @@ columns:
         label: 'herzgarlan.jobs::lang.updated_at'
         type: datetime
         sortable: true
+    

@@ -24,4 +24,6 @@
         'label' => 'Product Info',
     ],
     'tracking_no' => 'Tracking No.',
+    'postal_from' => 'From Postal Code',
+    'postal_to' => 'Destination Postal Code',
 ];

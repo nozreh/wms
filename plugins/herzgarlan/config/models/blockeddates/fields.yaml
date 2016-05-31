@@ -4,11 +4,13 @@ fields:
         mode: datetime
         span: auto
         type: datepicker
+        required: 1
     date_end:
         label: 'herzgarlan.config::lang.blocked_dates.date_end'
         mode: datetime
         span: auto
         type: datepicker
+        required: 1
     remarks:
         label: 'herzgarlan.config::lang.blocked_dates.remarks'
         span: full

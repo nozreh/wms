@@ -27,16 +27,29 @@ fields:
     addr_from:
         label: 'herzgarlan.jobs::lang.addr_from'
         size: tiny
-        span: full
+        span: auto
+        placeholder: 'Enter complete address'
         required: 1
         type: textarea
+    postal_from:
+        label: 'herzgarlan.jobs::lang.postal_from'
+        span: auto
+        placeholder: 'Enter Postal code (number only)'
+        required: 1
+        type: number
     addr_to:
         label: 'herzgarlan.jobs::lang.addr_to'
         size: tiny
-        span: full
+        span: auto
         required: 1
         defaultFrom: product_id
+        placeholder: 'Enter complete address'
         type: textarea
+    postal_to:
+        label: 'herzgarlan.jobs::lang.postal_to'
+        span: auto
+        placeholder: 'Enter Postal code (number only)'
+        type: number
     product_info:
         label: 'herzgarlan.jobs::lang.product_info.label'
         size: tiny
