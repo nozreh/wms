@@ -19,4 +19,9 @@ class ProductMovement extends Controller
         parent::__construct();
         BackendMenu::setContext('HerzGarlan.Inventory', 'inventory', 'productmovement');
     }
+
+    public function listExtendQuery($query)
+    {
+        $query->orderBy('created_at','asc');
+    }
 }

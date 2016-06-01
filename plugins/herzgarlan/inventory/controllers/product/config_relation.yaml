@@ -12,3 +12,6 @@ productmovement:
         toolbarButtons: create|delete
     readOnly: true
     showSearch: true
+    defaultSort:
+        column: created_at
+        direction: asc

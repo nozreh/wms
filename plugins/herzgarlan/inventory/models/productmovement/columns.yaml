@@ -20,6 +20,6 @@ columns:
         searchable: true
         sortable: true
     created_at:
-        label: Moved On
+        label: Date/Time of Last Movement
         type: datetime
         sortable: true

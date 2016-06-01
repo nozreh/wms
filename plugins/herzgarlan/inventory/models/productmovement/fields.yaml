@@ -34,5 +34,5 @@ fields:
         label: 'Previous Loose Carton'
         span: auto
         type: partial
-        path: $/herzgarlan/inventory/controllers/productmovement/_field_loose_carton.htm
+        path: $/herzgarlan/inventory/controllers/productmovement/_field_loose_carton_prev.htm
         tab: 'Loose Carton'
