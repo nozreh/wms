@@ -1,0 +1,47 @@
+columns:
+    delivery_order_id:
+        label: Delivery Order ID
+        type: text
+    backend_user:
+        label: Admin
+        relation: backend_user
+        select: first_name
+        searchable: true
+        sortable: true
+    customer:
+        label: Customer
+        relation: customer
+        select: company
+        searchable: true
+        sortable: true
+    driver:
+        label: Driver
+        relation: driver
+        select: name
+        searchable: true
+        sortable: true
+    status:
+        label: Status
+        type: text
+        searchable: true
+        sortable: true
+        searchable: true
+        sortable: true
+    sub_status:
+        label: Sub-Status
+        type: text
+        searchable: true
+        sortable: true
+        searchable: true
+        sortable: true
+    remarks:
+        label: Remarks
+        type: text
+        searchable: true
+        sortable: true
+        searchable: true
+        sortable: true
+    created_at:
+        label: Date/Time
+        type: datetime
+        sortable: true

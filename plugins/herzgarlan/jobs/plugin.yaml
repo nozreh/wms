@@ -18,6 +18,18 @@ navigation:
                 icon: icon-file-o
                 permissions:
                     - manage_jobs
+            my_delivery_order:
+                label: 'herzgarlan.jobs::lang.my_delivery_order'
+                url: herzgarlan/jobs/mydeliveryorder
+                icon: icon-file-o
+                permissions:
+                    - manage_jobs
+            delivery_order_log:
+                label: Logs
+                url: herzgarlan/jobs/deliverorderlog
+                icon: icon-list-ul
+                permissions:
+                    - manage_jobs
 permissions:
     manage_jobs:
         tab: 'herzgarlan.jobs::lang.jobs'

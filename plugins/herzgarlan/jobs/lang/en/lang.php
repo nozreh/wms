@@ -16,6 +16,7 @@
     'updated_at' => 'Updated Date',
     'jobs' => 'Jobs',
     'delivery_order' => 'Delivery Order',
+    'my_delivery_order' => 'My Delivery Order',
     'permission' => [
         'manage_jobs' => 'Manage Jobs',
     ],

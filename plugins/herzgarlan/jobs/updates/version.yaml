@@ -6,3 +6,6 @@
 1.0.3:
     - 'Created table herzgarlan_jobs_delivery_order_rates'
     - builder_table_create_herzgarlan_jobs_delivery_order_rates.php
+1.0.4:
+    - 'Created table herzgarlan_jobs_delivery_order_log'
+    - builder_table_create_herzgarlan_jobs_delivery_order_log.php

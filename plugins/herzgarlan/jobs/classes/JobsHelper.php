@@ -3,6 +3,7 @@
 use October\Rain\Exception\ApplicationException;
 use HerzGarlan\Jobs\Models\DeliveryOrder;
 use HerzGarlan\Config\Models\BlockedDates;
+use HerzGarlan\Config\Models\Timeslot;
 use Carbon\Carbon;
 
 class JobsHelper
@@ -35,5 +36,25 @@ class JobsHelper
             throw new ApplicationException('Date parameter is missing!');
         }   
     }
+
+    public static function getAvailableTimeslots($deliveryDate)
+    {
+        if( !empty($deliveryDate) ){
+            $availableDates = Timeslot::get()->all();
+            $order_date = Carbon::parse($deliveryDate);
+            foreach ($availableDates as $key => $slot) {
+                if($slot['day'] == $order_date->dayOfWeek)
+                {
+                    return $availableDates[$key]; // return all slots for that day of the week
+                    break;
+                }
+            }
+        }
+        else
+        {
+            throw new ApplicationException('Date parameter is missing!');
+        }   
+    }
+
 
 }

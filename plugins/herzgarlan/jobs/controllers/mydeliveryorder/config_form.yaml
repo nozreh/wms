@@ -1,0 +1,10 @@
+name: Delivery Order
+modelClass: HerzGarlan\Jobs\Models\DeliveryOrder
+form: $/herzgarlan/jobs/models/deliveryorder/fields.yaml
+defaultRedirect: herzgarlan/jobs/deliveryorder
+create:
+    redirect: 'herzgarlan/jobs/deliveryorder/update/:id'
+    redirectClose: herzgarlan/jobs/deliveryorder
+update:
+    redirect: herzgarlan/jobs/deliveryorder
+    redirectClose: herzgarlan/jobs/deliveryorder

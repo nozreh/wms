@@ -18,6 +18,11 @@ fields:
         span: auto
         required: 1
         type: recordfinder
+    available_timeslot:
+        span: auto
+        path: $/herzgarlan/jobs/partials/_hint.htm
+        type: partial
+        dependsOn: order_date
     product:
         label: 'herzgarlan.jobs::lang.product'
         type: dropdown

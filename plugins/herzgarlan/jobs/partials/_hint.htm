@@ -1,0 +1,46 @@
+<?php 
+$slots = $this->widget->form->vars['outsideTabs']->fields['Misc']['available_timeslot']->value;
+
+if( !is_null($slots) && !empty($slots) ){
+	foreach ($slots as $slot) {
+		if(is_array($slot) AND count($slot) > 0){
+
+			$timeslots = json_decode($slot['timeslot']);
+
+			if( count($timeslots) > 0)
+			{ 
+
+				$dow_text = date('D', strtotime("Sunday +{$slot['day']} days"));
+			?>
+			<div class="control-list list-unresponsive">
+				<label>Timeslots for <?php print $dow_text; ?></label>
+			    <table class="table data">
+			        <thead>
+			            <tr>
+			                <th><span>Time from</span></th>
+			                <th><span>Time To</span></th>
+			                <th><span>Capacity</span></th>
+			            </tr>
+			        </thead>
+			        <tbody>
+						<?php foreach ($timeslots as $key => $time) { ?>
+						<tr>
+			                <td><?php print $time->time_from; ?></td>
+			                <td><?php print $time->time_to; ?></td>
+			                <td><?php print $time->capacity; ?></td>
+			            </tr>
+						<?php } ?>
+			        </tbody>
+			    </table>
+			</div>
+<?php				
+			}
+		}
+	}
+}
+?>
+
+
+
+                
+            

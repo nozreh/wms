@@ -9,7 +9,10 @@ use Flash;
 use BackendAuth;
 use HerzGarlan\Inventory\Models\Product;
 use HerzGarlan\Config\Models\Rate;
+use Rainlab\User\Models\User as UserModel;
 use HerzGarlan\Jobs\Classes\JobsHelper;
+use Carbon\Carbon;
+use Mail;
 
 
 /**
@@ -69,12 +72,17 @@ class DeliveryOrder extends Model
 
     public $belongsTo = [
         'user' => ['Rainlab\User\Models\User' , 'table' => 'users', 'order' => 'company asc','conditions' => 'is_activated = 1'],
-        'product'  => ['HerzGarlan\Inventory\Models\Product']
+        'product'  => ['HerzGarlan\Inventory\Models\Product'],
+        'backend_user' => ['October\Rain\Auth\Models\User']
     ];
 
     public $belongsToMany = [
         'rates'       => ['HerzGarlan\Config\Models\Rate', 'table' => 'herzgarlan_jobs_delivery_order_rates', 'delete' => true],
         'rates_count' => ['HerzGarlan\Config\Models\Rate', 'table' => 'herzgarlan_jobs_delivery_order_rates', 'count' => true]
+    ];
+
+    public $hasMany = [
+        'deliveryorderlog' => ['HerzGarlan\Jobs\Models\DeliveryOrderLog']
     ];
 
     public $attachMany = [
@@ -88,7 +96,14 @@ class DeliveryOrder extends Model
 
     public function filterFields($fields, $context = null)
     {
-
+        if( !empty($this->order_date) ){
+            $inputs = Input::get('DeliveryOrder');
+            $list = JobsHelper::getAvailableTimeslots($this->order_date);
+            if( !empty($list) ){
+                $fields->available_timeslot->hidden = false;
+                $fields->available_timeslot->value = $list;
+            }
+        }
         // No selected product
         if (empty($this->product_id)) {
             $fields->product_info->hidden = false;
@@ -172,6 +187,7 @@ class DeliveryOrder extends Model
     {
         $backend_user = BackendAuth::getUser();
         $this->backend_user_id = $backend_user->id;
+        $this->status = 0;
         $this->tracking_no = strtoupper( str_random(12) );
     }
 
@@ -192,12 +208,56 @@ class DeliveryOrder extends Model
 
     public function afterCreate()
     {
-        Flash::success('Delivery order has been created successfully.');
+        Flash::success('Delivery order has been created successfully and an Email has been sent to the customer.');
+
+        $user = UserModel::find($this->user_id);
+        $product = empty( $this->product_id ) ? $this->product_info : Product::find($this->product_id);
+        $product_info = empty( $this->product_id ) ? $this->product_info : $product->name;
+        $backend_user = BackendAuth::getUser();
+        $contactEmail = $user->email;
+        $contactName = $user->name;
+        // These variables are available inside the message as Twig
+        $vars = ['email' => $user->email, 
+                'name' => $user->name, 
+                'product' => $product_info, 
+                'tracking_no' => $this->tracking_no,
+                'delivery_date' => $this->order_date,
+                'created_date' => $this->created_at,
+                'backend_user' => $backend_user->name,
+                'status' => 'Pending Delivery'];
+
+        Mail::send('herzgarlan.jobs::mail.new_delivery_order', $vars, function($message) use ($contactEmail, $contactEmail) {
+
+            $message->to($contactEmail, $contactEmail);
+        
+        });
     }
 
     public function afterSave()
     {
-        Flash::success('Delivery order has been updated successfully.');
+        Flash::success('Delivery order has been updated successfully and an Email has been sent to the customer.');
+
+        $user = UserModel::find($this->user_id);
+        $product = empty( $this->product_id ) ? $this->product_info : Product::find($this->product_id);
+        $product_info = empty( $this->product_id ) ? $this->product_info : $product->name;
+        $backend_user = BackendAuth::getUser();
+        $contactEmail = $user->email;
+        $contactName = $user->name;
+        // These variables are available inside the message as Twig
+        $vars = ['email' => $user->email, 
+                'name' => $user->name, 
+                'product' => $product_info, 
+                'tracking_no' => $this->tracking_no,
+                'backend_user' => $backend_user->name,
+                'delivery_date' => $this->order_date,
+                'updated_date' => $this->updated_at,
+                'status' => 'Pending Delivery'];
+
+        Mail::send('herzgarlan.jobs::mail.update_delivery_order', $vars, function($message) use ($contactEmail, $contactEmail) {
+
+            $message->to($contactEmail, $contactEmail);
+        
+        });
     }
 
 }

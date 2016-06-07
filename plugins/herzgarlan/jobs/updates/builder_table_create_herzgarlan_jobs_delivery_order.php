@@ -21,6 +21,7 @@ class BuilderTableCreateHerzgarlanJobsDeliveryOrder extends Migration
             $table->integer('postal_to')->unsigned();
             $table->string('dimension');
             $table->string('weight');
+            $table->integer('status')->unsigned()->default(0);
             $table->text('product_info')->nullable();
             $table->string('tracking_no');
             $table->timestamp('created_at');

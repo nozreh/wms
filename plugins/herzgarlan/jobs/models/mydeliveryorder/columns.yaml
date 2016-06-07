@@ -1,0 +1,41 @@
+columns:
+    tracking_no:
+        label: 'herzgarlan.jobs::lang.tracking_no'
+        type: text
+        searchable: true
+        sortable: true
+    product_id:
+        label: 'herzgarlan.jobs::lang.product'
+        type: partial
+        searchable: true
+        sortable: true
+        path: ~/plugins/herzgarlan/jobs/models/deliveryorder/field_product_name.htm
+    user_id:
+        label: 'herzgarlan.jobs::lang.customer'
+        type: partial
+        searchable: true
+        sortable: true
+        path: ~/plugins/herzgarlan/jobs/models/deliveryorder/field_customer.htm
+    postal_from:
+        label: 'herzgarlan.jobs::lang.postal_from'
+        type: number
+        searchable: true
+        sortable: true
+    postal_to:
+        label: 'herzgarlan.jobs::lang.postal_to'
+        type: number
+        searchable: true
+        sortable: true
+    order_date:
+        label: 'herzgarlan.jobs::lang.order_date'
+        type: datetime
+        searchable: false
+        sortable: true
+    created_at:
+        label: 'herzgarlan.jobs::lang.created_at'
+        type: datetime
+        sortable: true
+    updated_at:
+        label: 'herzgarlan.jobs::lang.updated_at'
+        type: datetime
+        sortable: true
