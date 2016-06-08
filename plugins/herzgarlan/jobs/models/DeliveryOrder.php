@@ -82,7 +82,7 @@ class DeliveryOrder extends Model
     ];
 
     public $hasMany = [
-        'deliveryorderlog' => ['HerzGarlan\Jobs\Models\DeliveryOrderLog']
+        'deliveryorderlog' => ['HerzGarlan\Jobs\Models\DeliveryOrderLog', 'delete' => true]
     ];
 
     public $attachMany = [
@@ -105,10 +105,6 @@ class DeliveryOrder extends Model
             }
         }
 
-        if(!empty($this->customer)){
-            throw new ValidationException(['customer' => 'Customer changes']);
-        }
-
         // No selected product
         if (empty($this->product_id)) {
             $fields->product_info->hidden = false;
@@ -119,7 +115,7 @@ class DeliveryOrder extends Model
         {
             $do = DeliveryOrder::where('id',$this->id)->get();
             $product = Product::where('id', $this->product_id)->get();
-            $fields->product_info->hidden = true;
+            //$fields->product_info->hidden = true;
 
             // if product is not changed
             if( count($do) > 0 )
@@ -192,7 +188,7 @@ class DeliveryOrder extends Model
     {
         $backend_user = BackendAuth::getUser();
         $this->backend_user_id = $backend_user->id;
-        $this->status = 0;
+        $this->status = 'Pending';
         $this->tracking_no = strtoupper( str_random(12) );
     }
 

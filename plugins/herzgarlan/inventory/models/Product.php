@@ -45,8 +45,8 @@ class Product extends Model
     ];
 
     public $hasMany = [
-        'productmovement' => ['HerzGarlan\Inventory\Models\ProductMovement'],
-        'deliveryorder' => ['HerzGarlan\Jobs\Models\DeliveryOrder']
+        'productmovement' => ['HerzGarlan\Inventory\Models\ProductMovement', 'delete' => true],
+        'deliveryorder' => ['HerzGarlan\Jobs\Models\DeliveryOrder', 'delete' => true]
     ];
 
     public $attachMany = [

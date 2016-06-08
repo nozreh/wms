@@ -16,6 +16,11 @@ columns:
         searchable: true
         sortable: true
         path: ~/plugins/herzgarlan/jobs/models/deliveryorder/field_customer.htm
+    status:
+        label: 'herzgarlan.jobs::lang.status'
+        type: text
+        searchable: true
+        sortable: true
     postal_from:
         label: 'herzgarlan.jobs::lang.postal_from'
         type: number

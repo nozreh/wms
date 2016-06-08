@@ -7,26 +7,26 @@ fields:
     order_date:
         label: 'herzgarlan.jobs::lang.order_date'
         mode: datetime
-        span: auto
+        span: left
         required: 1
         type: datepicker
+    available_timeslot:
+        span: right
+        path: $/herzgarlan/jobs/partials/_timeslot.htm
+        type: partial
+        dependsOn: order_date
     user:
         label: 'herzgarlan.jobs::lang.customer'
         nameFrom: company
         descriptionFrom: description
         list: $/herzgarlan/profile/config/profile/columns.yaml
-        span: auto
+        span: left
         required: 1
         type: recordfinder
-    available_timeslot:
-        span: auto
-        path: $/herzgarlan/jobs/partials/_timeslot.htm
-        type: partial
-        dependsOn: order_date
     product:
         label: 'herzgarlan.jobs::lang.product'
         type: dropdown
-        span: auto
+        span: left
         dependsOn: user
         placeholder: 'Select a Product'
         required: true
@@ -62,8 +62,8 @@ fields:
         span: full
         placeholder: 'herzgarlan.jobs::lang.product_info.placeholder'
         type: textarea
-        dependsOn: product
         required: true
+        commentAbove: 'Required if no Product selected'
     dimension:
         label: 'herzgarlan.jobs::lang.dimension'
         span: auto
