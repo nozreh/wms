@@ -22,7 +22,7 @@ class DeliveryOrder extends Controller
         	'rates' => [
                 'label' => 'herzgarlan.jobs::lang.rate',
                 'type'	=> 'partial',
-                'sortable' => 'true',
+                'sortable' => '0',
                 'path' => '~/plugins/herzgarlan/jobs/models/deliveryorder/field_rates.htm'
             ]
         ]);

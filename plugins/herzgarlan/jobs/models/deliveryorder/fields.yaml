@@ -20,7 +20,7 @@ fields:
         type: recordfinder
     available_timeslot:
         span: auto
-        path: $/herzgarlan/jobs/partials/_hint.htm
+        path: $/herzgarlan/jobs/partials/_timeslot.htm
         type: partial
         dependsOn: order_date
     product:
@@ -29,30 +29,31 @@ fields:
         span: auto
         dependsOn: user
         placeholder: 'Select a Product'
+        required: true
     addr_from:
         label: 'herzgarlan.jobs::lang.addr_from'
         size: tiny
-        span: auto
+        span: left
         placeholder: 'Enter complete address'
         required: 1
         type: textarea
-    postal_from:
-        label: 'herzgarlan.jobs::lang.postal_from'
-        span: auto
-        placeholder: 'Enter Postal code (number only)'
-        required: 1
-        type: number
     addr_to:
         label: 'herzgarlan.jobs::lang.addr_to'
         size: tiny
-        span: auto
+        span: right
         required: 1
         defaultFrom: product_id
         placeholder: 'Enter complete address'
         type: textarea
+    postal_from:
+        label: 'herzgarlan.jobs::lang.postal_from'
+        span: left
+        placeholder: 'Enter Postal code (number only)'
+        required: 1
+        type: number
     postal_to:
         label: 'herzgarlan.jobs::lang.postal_to'
-        span: auto
+        span: right
         placeholder: 'Enter Postal code (number only)'
         type: number
     product_info:
@@ -62,16 +63,19 @@ fields:
         placeholder: 'herzgarlan.jobs::lang.product_info.placeholder'
         type: textarea
         dependsOn: product
+        required: true
     dimension:
         label: 'herzgarlan.jobs::lang.dimension'
         span: auto
         dependsOn: product
         type: text
+        commentAbove: 'W x H x D (20cm x 40cm x 50cm)'
     weight:
         label: 'herzgarlan.jobs::lang.weight'
         span: auto
         dependsOn: product
         type: text
+        commentAbove: 'Please indicate unit of measurement ( e.g. 500g )'
     photos:
         label: 'herzgarlan.jobs::lang.photos'
         span: auto

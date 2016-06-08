@@ -104,6 +104,11 @@ class DeliveryOrder extends Model
                 $fields->available_timeslot->value = $list;
             }
         }
+
+        if(!empty($this->customer)){
+            throw new ValidationException(['customer' => 'Customer changes']);
+        }
+
         // No selected product
         if (empty($this->product_id)) {
             $fields->product_info->hidden = false;
