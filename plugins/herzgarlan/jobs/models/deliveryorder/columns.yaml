@@ -33,8 +33,13 @@ columns:
         sortable: true
     order_date:
         label: 'herzgarlan.jobs::lang.order_date'
-        type: datetime
+        type: date
         searchable: false
+        sortable: true
+    timeslot:
+        label: 'herzgarlan.jobs::lang.timeslot'
+        type: text
+        searchable: true
         sortable: true
     created_at:
         label: 'herzgarlan.jobs::lang.created_at'

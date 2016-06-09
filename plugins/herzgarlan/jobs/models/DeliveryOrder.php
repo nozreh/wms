@@ -3,12 +3,14 @@
 use Model;
 use Validator;
 use ValidationException;
+use October\Rain\Exception\ApplicationException;
 use Input;
 use Db;
 use Flash;
 use BackendAuth;
 use HerzGarlan\Inventory\Models\Product;
 use HerzGarlan\Config\Models\Rate;
+use HerzGarlan\Config\Models\Timeslot;
 use Rainlab\User\Models\User as UserModel;
 use HerzGarlan\Jobs\Classes\JobsHelper;
 use Carbon\Carbon;
@@ -32,11 +34,14 @@ class DeliveryOrder extends Model
         'postal_from' => 'required|digits:6|numeric',
         'addr_to' => 'required',
         'postal_to' => 'required|digits:6|numeric',
+        'cartons' => 'numeric',
+        'timeslot' => 'required'
     ];
 
     public $customMessages = [
        'order_date.required' => 'The Delivery Date field is required.',
        'order_date.after' => 'The Delivery Date must be a future date.',
+       'timeslot.required' => 'The Timeslot field is required.',
        'user.required' => 'The Customer field is required.',
        'addr_from.required' => 'The From Address field is required.',
        'addr_to.required' => 'The Destination Address field is required.',
@@ -45,7 +50,8 @@ class DeliveryOrder extends Model
        'postal_from.numeric' => 'The From Address Postal code must contain numbers only.',
        'postal_to.numeric' => 'The From Address Postal code must contain numbers only.',
        'postal_from.digits' => 'Invalid format for From Address Postal code.',
-       'postal_to.digits' => 'Invalid format for Destination Address Postal code.'
+       'postal_to.digits' => 'Invalid format for Destination Address Postal code.',
+       'cartons.numeric' => 'The No. of cartons must contain numbers only.',
     ];
 
     public $fillable = [
@@ -94,15 +100,45 @@ class DeliveryOrder extends Model
         return Product::getNameList($this->user_id);
     }
 
+    public function getTimeslotOptions()
+    {
+        if( empty($this->order_date) ){
+            return ['1' => 'Please select Delivery Date first'];
+        }
+        $date = $this->order_date;
+        $timeslots = JobsHelper::getAvailableTimeslots($date);
+        $slots = [];
+        if(empty($timeslots) AND !empty($this->order_date)) // selected date has no defined timeslot
+        {
+            Flash::error('No timeslot available on selected date, Please select another Delivery Date.');
+            return ['0' => 'Please select another Delivery Date.'];
+        }
+        foreach ($timeslots->timeslot as $key => $slot) 
+        {
+            $_timeslot = $slot['time_from'].'-'.$slot['time_to'];
+            $capacityTaken = JobsHelper::getCapacityByTimeslot($this->order_date, $_timeslot);
+            
+            if( count($capacityTaken) >= $slot['capacity'] ) continue; // skip timeslot if it's 0
+
+            $capacity = $slot['capacity'] - count($capacityTaken);
+            $slots[ $_timeslot ] = $slot['time_from'].' - '.$slot['time_to'].' = Available Capacity - '.$capacity;
+        }
+
+        if( count($slots) > 0 ) 
+        {
+            return $slots;
+        }
+        else
+        {
+            Flash::error('No timeslot left on selected date, Please select another Delivery Date.');
+            return ['0' => 'Please select another Delivery Date.'];
+        }
+    }
+
     public function filterFields($fields, $context = null)
     {
-        if( !empty($this->order_date) ){
-            $inputs = Input::get('DeliveryOrder');
-            $list = JobsHelper::getAvailableTimeslots($this->order_date);
-            if( !empty($list) ){
-                $fields->available_timeslot->hidden = false;
-                $fields->available_timeslot->value = $list;
-            }
+        if($fields->timeslot->value === 0){
+            throw new ValidationException(['order_date' => $fields->timeslot->value]);
         }
 
         // No selected product

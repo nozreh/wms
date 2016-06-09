@@ -5,6 +5,7 @@
     ],
     'rate' => 'Type of Services',
     'order_date' => 'Delivery Date',
+    'timeslot' => 'Timeslot',
     'customer' => 'Customer',
     'product' => 'Product',
     'addr_from' => 'From - Address',

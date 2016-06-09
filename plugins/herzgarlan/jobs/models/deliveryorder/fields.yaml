@@ -1,19 +1,20 @@
 fields:
     rates:
         label: 'herzgarlan.jobs::lang.rate'
-        span: auto
+        span: full
         required: 1
         type: relation
     order_date:
         label: 'herzgarlan.jobs::lang.order_date'
-        mode: datetime
+        mode: date
         span: left
         required: 1
         type: datepicker
-    available_timeslot:
+    timeslot:
+        label: 'herzgarlan.jobs::lang.timeslot'
         span: right
-        path: $/herzgarlan/jobs/partials/_timeslot.htm
-        type: partial
+        type: dropdown
+        required: 1
         dependsOn: order_date
     user:
         label: 'herzgarlan.jobs::lang.customer'
@@ -26,7 +27,7 @@ fields:
     product:
         label: 'herzgarlan.jobs::lang.product'
         type: dropdown
-        span: left
+        span: right
         dependsOn: user
         placeholder: 'Select a Product'
         required: true
@@ -37,20 +38,20 @@ fields:
         placeholder: 'Enter complete address'
         required: 1
         type: textarea
+    postal_from:
+        label: 'herzgarlan.jobs::lang.postal_from'
+        span: right
+        placeholder: 'Enter Postal code (number only)'
+        required: 1
+        type: number
     addr_to:
         label: 'herzgarlan.jobs::lang.addr_to'
         size: tiny
-        span: right
+        span: left
         required: 1
         defaultFrom: product_id
         placeholder: 'Enter complete address'
         type: textarea
-    postal_from:
-        label: 'herzgarlan.jobs::lang.postal_from'
-        span: left
-        placeholder: 'Enter Postal code (number only)'
-        required: 1
-        type: number
     postal_to:
         label: 'herzgarlan.jobs::lang.postal_to'
         span: right
@@ -76,6 +77,15 @@ fields:
         dependsOn: product
         type: text
         commentAbove: 'Please indicate unit of measurement ( e.g. 500g )'
+    cartons:
+        label: 'No. of cartons'
+        span: auto
+        type: text
+    tracking_no:
+        label: 'herzgarlan.jobs::lang.tracking_no'
+        span: auto
+        disabled: 1
+        type: text
     photos:
         label: 'herzgarlan.jobs::lang.photos'
         span: auto
@@ -85,8 +95,3 @@ fields:
             mode: crop
             extension: auto
         type: fileupload
-    tracking_no:
-        label: 'herzgarlan.jobs::lang.tracking_no'
-        span: auto
-        disabled: 1
-        type: text

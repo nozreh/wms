@@ -14,13 +14,15 @@ class BuilderTableCreateHerzgarlanJobsDeliveryOrder extends Migration
             $table->integer('product_id')->nullable()->default(0);
             $table->integer('user_id')->unsigned()->default(0);
             $table->integer('backend_user_id')->unsigned()->default(0);
-            $table->timestamp('order_date');
+            $table->date('order_date');
+            $table->string('timeslot');
             $table->text('addr_from')->nullable();
             $table->integer('postal_from')->unsigned();
             $table->text('addr_to')->nullable();
             $table->integer('postal_to')->unsigned();
             $table->string('dimension');
             $table->string('weight');
+            $table->string('cartons')->nullable();
             $table->string('status')->default('Pending');
             $table->string('sub_status')->nullable();
             $table->text('product_info')->nullable();

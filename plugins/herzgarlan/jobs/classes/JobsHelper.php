@@ -56,5 +56,17 @@ class JobsHelper
         }   
     }
 
+    public static function getCapacityByTimeslot($deliveryDate, $timeslot)
+    {
+        if( !empty($deliveryDate) AND  !empty($timeslot) )
+        {
+            $capacityTaken = DeliveryOrder::where(['order_date' => $deliveryDate,'timeslot'=>$timeslot])->get();
+            return $capacityTaken;       
+        }
+        else
+        {
+            throw new ApplicationException('JobsHelper::getCapacityByTimeslot(), Date and Timeslot parameters are required!');
+        }   
+    }
 
 }
