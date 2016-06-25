@@ -21,3 +21,7 @@ columns:
         label: 'herzgarlan.config::lang.rate.updated_at'
         type: datetime
         sortable: true
+    backend_user:
+        label: Created By
+        relation: backend_user
+        select: first_name

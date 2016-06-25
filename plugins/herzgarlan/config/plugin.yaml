@@ -34,3 +34,9 @@ navigation:
                 icon: icon-calendar-o
                 permissions:
                     - herzgarlan.config.manage_config
+            customers:
+                label: Customer Rates
+                url: herzgarlan/config/customers
+                icon: icon-sliders
+                permissions:
+                    - herzgarlan.config.manage_config

@@ -1,0 +1,25 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    user:
+        label: Name
+        relation: user
+        select: name
+
+    company:
+        label: Company
+        searchable: true
+        relation: user
+        select: company
+
+    created_at:
+        label: 'herzgarlan.jobs::lang.created_at'
+        type: datetime
+        sortable: true
+        
+    updated_at:
+        label: 'herzgarlan.jobs::lang.updated_at'
+        type: datetime
+        sortable: true

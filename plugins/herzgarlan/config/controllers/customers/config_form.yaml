@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Customer
+
+# Model Form Field configuration
+form: $/herzgarlan/config/models/customer/fields.yaml
+
+# Model Class name
+modelClass: HerzGarlan\Config\Models\Customer
+
+# Default redirect location
+defaultRedirect: herzgarlan/config/customers
+
+# Create page
+create:
+    title: Create Customer Rate
+    redirect: herzgarlan/config/customers/update/:id
+    redirectClose: herzgarlan/config/customers
+
+# Update page
+update:
+    title: Edit Customer Rate
+    redirect: herzgarlan/config/customers
+    redirectClose: herzgarlan/config/customers
+
+# Preview page
+preview:
+    title: Preview Customer Rate

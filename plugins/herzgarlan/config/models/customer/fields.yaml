@@ -1,0 +1,23 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    #user:
+    #    label: Customer
+    #    nameFrom: company
+    #    descriptionFrom: description
+    #    list: $/herzgarlan/profile/config/profile/columns.yaml
+    #    span: left
+    #    required: 1
+    #    type: recordfinder
+
+    user:
+        label: Customer
+        type: dropdown
+        required: 1
+
+    rates:
+        type: partial
+        path: field_rates
+        context: update # This is currently broken for creation

@@ -1,0 +1,8 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    pivot[value]:
+        label: Rate
+        span: auto

@@ -14,7 +14,8 @@
         'manage_rate' => 'Manage Rates',
         'rates' => 'Rates',
         'operator' => 'Operator',
-        'operator_comment' => 'Operator to use for any changes to inventory (e.g. Inbound = Add)'
+        'operator_comment' => 'Operator to use for any changes to inventory (e.g. Inbound = Add)',
+        'service_type' => 'Type of Service',
     ],
     'timeslot' => [
         'day' => 'Day',
@@ -39,5 +40,8 @@
         'manage_config' => 'Manage Config',
         'customer' => 'Customer',
         'rate' => 'Rate',
+    ],
+    'menu' => [
+        'customer_rate' => 'Customers Rate',
     ],
 ];

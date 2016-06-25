@@ -1,0 +1,15 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+rates:
+    label: Rate
+    view:
+        list: $/herzgarlan/config/models/customerratepivot/columns.yaml
+        toolbarButtons: add|remove
+    manage:
+        showSearch: true
+        recordsPerPage: 10
+        list: $/herzgarlan/config/models/rate/columns.yaml
+    pivot:
+        form: $/herzgarlan/config/models/customerratepivot/fields.yaml

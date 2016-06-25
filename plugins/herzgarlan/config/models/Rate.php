@@ -29,10 +29,9 @@ class Rate extends Model
      */
     public $table = 'herzgarlan_config_rates';
 
-    public function beforeValidate()
+    public function beforeSave()
     {
-        $rate = Rate::find(1);
         $backend_user = BackendAuth::getUser();
-        $rate->backend_user_id = $backend_user->id;
+        $this->backend_user_id = $backend_user->id;
     }
 }

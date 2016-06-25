@@ -1,0 +1,12 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: name
+        searchable: true
+
+    pivot[value]:
+        label: Rates
+        width: 150px

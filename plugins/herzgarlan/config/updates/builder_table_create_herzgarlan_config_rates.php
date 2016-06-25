@@ -17,7 +17,7 @@ class BuilderTableCreateHerzgarlanConfigRates extends Migration
             $table->text('short_description')->nullable();
             $table->timestamp('created_at');
             $table->timestamp('updated_at');
-            $table->integer('updated_by');
+            $table->integer('backend_user_id');
         });
     }
     
