@@ -7,6 +7,10 @@ columns:
         label: name
         searchable: true
 
+    value:
+        label: Regular Rates
+        sortable: true
+
     pivot[value]:
-        label: Rates
-        width: 150px
+        label: Customer Rates
+        sortable: true

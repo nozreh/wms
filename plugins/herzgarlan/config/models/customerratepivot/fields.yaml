@@ -6,3 +6,4 @@ fields:
     pivot[value]:
         label: Rate
         span: auto
+        required: 1

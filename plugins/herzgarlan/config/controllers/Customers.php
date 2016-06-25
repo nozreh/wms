@@ -24,4 +24,5 @@ class Customers extends Controller
 
         BackendMenu::setContext('HerzGarlan.Config', 'config', 'customers');
     }
+
 }

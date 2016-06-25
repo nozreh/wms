@@ -16,11 +16,6 @@ class Customer extends Model
      */
     public $table = 'herzgarlan_config_customers';
 
-    /**
-     * @var array Guarded fields
-     */
-    protected $guarded = [];
-
     public $belongsTo = [
         'customer' => ['RainLab\User\Models\User'],
         'user' => ['RainLab\User\Models\User']
