@@ -5,6 +5,7 @@ use BackendMenu;
 use BackendAuth;
 use RainLab\User\Models\User;
 use HerzGarlan\Inventory\Models\Product;
+use Flash;
 
 class MyProductMovement extends Controller
 {
@@ -27,8 +28,17 @@ class MyProductMovement extends Controller
     {
         $backend_user = BackendAuth::getUser();
         $user = User::where(['backend_user_id' => $backend_user->id ])->first();
-        $product = Product::where([ 'customer_id' => $user->id ])->first();
-
-        $query->where('product_id', $product->id)->orderBy('created_at','asc');
+        // make sure admin was assigned to the user
+        if( $user )
+        {
+            $product = Product::where([ 'customer_id' => $user->id ])->first();
+            $query->where('product_id', $product->id)->orderBy('created_at','asc');
+        }
+        else
+        {
+            Flash::error('This Admin Account does not have a Product or User account.');
+            $query->where('id', 0);
+        }
+        
     }
 }
