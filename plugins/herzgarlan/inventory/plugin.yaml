@@ -8,6 +8,9 @@ permissions:
     manage_products:
         tab: 'herzgarlan.inventory::lang.plugin.name'
         label: 'Manage Products'
+    manage_own_products:
+        tab: 'herzgarlan.inventory::lang.plugin.name'
+        label: 'Manage Own Products'
 navigation:
     inventory:
         label: 'herzgarlan.inventory::lang.plugin.name'
@@ -28,3 +31,9 @@ navigation:
                 icon: icon-table
                 permissions:
                     - manage_products
+    myproductmovement:
+        label: 'herzgarlan.inventory::lang.productmovement.menu_label'
+        url: herzgarlan/inventory/myproductmovement
+        icon: icon-table
+        permissions:
+            - manage_own_products

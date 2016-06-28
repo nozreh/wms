@@ -57,12 +57,6 @@ fields:
         span: full
         type: textarea
 
-    groups:
-        label: rainlab.user::lang.user.groups
-        type: relation
-        emptyOption: rainlab.user::lang.user.empty_groups
-        span: left
-
     logo:
         label: 'herzgarlan.profile::lang.logo'
         span: auto

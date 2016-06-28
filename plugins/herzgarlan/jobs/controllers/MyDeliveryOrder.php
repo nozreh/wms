@@ -14,7 +14,7 @@ class MyDeliveryOrder extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('HerzGarlan.Jobs', 'jobs', 'my_delivery_order');
+        BackendMenu::setContext('HerzGarlan.Jobs', 'my_delivery_order', 'my_delivery_order');
     }
 
     public function listExtendColumns($list)
@@ -24,7 +24,7 @@ class MyDeliveryOrder extends Controller
                 'label' => 'herzgarlan.jobs::lang.rate',
                 'type'	=> 'partial',
                 'sortable' => 'true',
-                'path' => '~/plugins/herzgarlan/jobs/models/deliveryorder/field_rates.htm'
+                'path' => '~/plugins/herzgarlan/jobs/models/mydeliveryorder/field_rates.htm'
             ]
         ]);
     }

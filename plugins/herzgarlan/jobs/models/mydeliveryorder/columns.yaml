@@ -10,12 +10,6 @@ columns:
         searchable: true
         sortable: true
         path: ~/plugins/herzgarlan/jobs/models/deliveryorder/field_product_name.htm
-    user:
-        label: 'herzgarlan.jobs::lang.customer'
-        relation: user
-        select: company
-        searchable: true
-        sortable: true
     status:
         label: 'herzgarlan.jobs::lang.status'
         type: text

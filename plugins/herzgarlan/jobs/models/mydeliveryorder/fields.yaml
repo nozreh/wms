@@ -1,0 +1,88 @@
+fields:
+    rates:
+        label: 'herzgarlan.jobs::lang.rate'
+        span: full
+        required: 1
+        type: relation
+    order_date:
+        label: 'herzgarlan.jobs::lang.order_date'
+        mode: date
+        span: left
+        required: 1
+        type: datepicker
+    timeslot:
+        label: 'herzgarlan.jobs::lang.timeslot'
+        span: right
+        type: dropdown
+        required: 1
+        dependsOn: order_date
+    product:
+        label: 'herzgarlan.jobs::lang.product'
+        type: dropdown
+        span: left
+        placeholder: 'Select a Product'
+        required: true
+    product_info:
+        label: 'herzgarlan.jobs::lang.product_info.label'
+        size: tiny
+        span: right
+        placeholder: 'herzgarlan.jobs::lang.product_info.placeholder'
+        type: textarea
+        required: true
+        commentBelow: 'Required if no Product selected'
+    addr_from:
+        label: 'herzgarlan.jobs::lang.addr_from'
+        size: tiny
+        span: left
+        placeholder: 'Enter complete address'
+        required: 1
+        type: textarea
+    postal_from:
+        label: 'herzgarlan.jobs::lang.postal_from'
+        span: right
+        placeholder: 'Enter Postal code (number only)'
+        required: 1
+        type: number
+    addr_to:
+        label: 'herzgarlan.jobs::lang.addr_to'
+        size: tiny
+        span: left
+        required: 1
+        defaultFrom: product_id
+        placeholder: 'Enter complete address'
+        type: textarea
+    postal_to:
+        label: 'herzgarlan.jobs::lang.postal_to'
+        span: right
+        placeholder: 'Enter Postal code (number only)'
+        type: number
+    dimension:
+        label: 'herzgarlan.jobs::lang.dimension'
+        span: auto
+        dependsOn: product
+        type: text
+        commentAbove: 'W x H x D (20cm x 40cm x 50cm)'
+    weight:
+        label: 'herzgarlan.jobs::lang.weight'
+        span: auto
+        dependsOn: product
+        type: text
+        commentAbove: 'Please indicate unit of measurement ( e.g. 500g )'
+    cartons:
+        label: 'No. of cartons'
+        span: auto
+        type: text
+    tracking_no:
+        label: 'herzgarlan.jobs::lang.tracking_no'
+        span: auto
+        disabled: 1
+        type: text
+    photos:
+        label: 'herzgarlan.jobs::lang.photos'
+        span: auto
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        type: fileupload

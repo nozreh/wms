@@ -1,0 +1,9 @@
+<div class="layout-row min-size">
+	<?php 
+	$services = [];
+	foreach ($value as $key => $val) {
+		$services[] = $val['name'];
+	} 
+	print implode(' , ', $services);
+	?>
+</div>

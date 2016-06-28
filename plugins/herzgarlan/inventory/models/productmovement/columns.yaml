@@ -19,6 +19,11 @@ columns:
         sortable: true
         searchable: true
         sortable: true
+    total_balance:
+        label: Balance
+        type: partial
+        path: $/herzgarlan/inventory/controllers/myproductmovement/_field_total_balance.htm
+        sortable: false
     created_at:
         label: Date/Time of Last Movement
         type: datetime

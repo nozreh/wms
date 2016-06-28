@@ -15,5 +15,6 @@
     'logo' => 'Company Logo',
     'registered_on' => 'registered_on',
     'email' => 'Email',
-    'new_customer' => 'New Customer'
+    'new_customer' => 'New Customer',
+    'backend_user' => 'Admin Account'
 ];

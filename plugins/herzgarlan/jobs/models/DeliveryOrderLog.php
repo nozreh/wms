@@ -35,12 +35,10 @@ class DeliveryOrderLog extends Model
 
     public static function add($delivery_order, $status, $remarks)
     {
-        $backend_user = BackendAuth::getUser();
-
         $do = new DeliveryOrderLog();
         $do->delivery_order_id = $delivery_order->id;
-        $do->backend_user_id = $backend_user->id;
-        $do->customer_id = 0;
+        $do->backend_user_id = $delivery_order->backend_user_id;
+        $do->customer_id = $delivery_order->user_id;
         $do->driver_id = 0;
         $do->status = $status;
         $do->remarks = $remarks;

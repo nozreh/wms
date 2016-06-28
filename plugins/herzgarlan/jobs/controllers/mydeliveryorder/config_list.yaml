@@ -1,7 +1,7 @@
 title: My Delivery Order
-modelClass: HerzGarlan\Jobs\Models\DeliveryOrder
+modelClass: HerzGarlan\Jobs\Models\MyDeliveryOrder
 list: $/herzgarlan/jobs/models/mydeliveryorder/columns.yaml
-recordUrl: 'herzgarlan/jobs/deliveryorder/update/:id'
+recordUrl: 'herzgarlan/jobs/mydeliveryorder/update/:id'
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 showCheckboxes: true

@@ -1,0 +1,32 @@
+
+	<div class="report-widget">
+    	<div class="table-container">
+        	<table class="table data" data-provides="rowlink">
+				    <thead>
+				        <tr>
+							<th>
+				                Carton Quantity 
+				        	</th>
+				        	<th>
+				                Quantity Per Carton 
+				        	</th>
+						</tr>
+				    </thead>
+				    <tbody>
+					<?php if(is_array($value)){
+						foreach ($value as $key => $v) : ?>
+				           <tr >
+				                <td>
+				               <?= $v['carton']; ?>                
+				                </td>
+				                <td>
+				               <?= $v['pieces']; ?>                
+				                </td>
+							</tr>
+					  <?php endforeach; 
+					}?>
+					</tbody>
+				    <tfoot></tfoot>
+				</table>
+			</div>
+		</div>

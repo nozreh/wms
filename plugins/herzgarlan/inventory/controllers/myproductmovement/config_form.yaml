@@ -1,0 +1,7 @@
+name: Product Movement
+modelClass: HerzGarlan\Inventory\Models\ProductMovement
+form: $/herzgarlan/inventory/models/productmovement/fields.yaml
+defaultRedirect: herzgarlan/inventory/productmovement
+update:
+    redirect: herzgarlan/inventory/productmovement
+    redirectClose: herzgarlan/inventory/productmovement

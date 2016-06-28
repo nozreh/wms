@@ -1,17 +1,4 @@
 1.0.1:
     - 'Initialize plugin.'
-1.0.2:
-    - 'Created table herzgarlan_profile_profiles'
-    - builder_table_create_herzgarlan_profile_profiles.php
-1.0.3:
-    - 'Updated table herzgarlan_profile_profiles added contact name and email'
-    - builder_table_update_herzgarlan_profile_profiles.php
-1.0.4:
-    - 'Updated table herzgarlan_profile_profiles'
-    - builder_table_update_herzgarlan_profile_profiles_2.php
-1.0.5:
-    - 'Updated table herzgarlan_profile_profiles'
-    - builder_table_update_herzgarlan_profile_profiles_3.php
-1.0.6:
     - 'Add profile fieds table herzgarlan_profile_profiles'
     - add_profiles_field_to_users_table.php

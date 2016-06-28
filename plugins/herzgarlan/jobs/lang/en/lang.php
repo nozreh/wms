@@ -21,6 +21,7 @@
     'my_delivery_order' => 'My Delivery Order',
     'permission' => [
         'manage_jobs' => 'Manage Jobs',
+        'manage_own_jobs' => 'Manage Own Jobs',
     ],
     'product_info' => [
         'placeholder' => 'Add product info here for non-inventory product',

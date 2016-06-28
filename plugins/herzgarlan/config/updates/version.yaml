@@ -13,3 +13,6 @@
 1.0.5:
     - 'Create base database tables for customer rates'
     - create_customers_table.php
+1.0.6:
+    - 'Seed config tables'
+    - seed_config_tables.php

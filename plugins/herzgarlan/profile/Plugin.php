@@ -7,6 +7,7 @@ use Backend;
 use System\Classes\PluginBase;
 use RainLab\User\Models\User as UserModel;
 use RainLab\User\Controllers\Users as UsersController;
+use Backend\Models\User as BackendUser;
 use Lang;
 
 class Plugin extends PluginBase
@@ -16,7 +17,8 @@ class Plugin extends PluginBase
 
     public function boot()
     {
-    	UserModel::extend(function($model){
+
+    	UserModel::extend(function($model){            
     		$model->attachOne['logo'] = ['System\Models\File', 'delete' => true];
             $model->rules = [
                 'name'     => 'required|between:2,255',
@@ -33,8 +35,10 @@ class Plugin extends PluginBase
                 'registration_no',
                 'mailing_addr',
                 'shipping_addr',
-                'logo'
+                'logo',
+                'backend_user_id'
             ]);
+
         });
 
         Event::listen('backend.list.extendColumns', function($widget) {
@@ -69,6 +73,14 @@ class Plugin extends PluginBase
             $fields = __DIR__ . '/config/profile/fields.yaml';
             $config = Yaml::parse(File::get($fields));
             $widget->addFields($config['fields']);
+            $widget->addFields(['backend_user_id' => [
+                'label'    => 'Admin Account',
+                'type'     => 'dropdown',
+                'span'     => 'auto',
+                'required' => '1',
+                'options' => BackendUser::lists('first_name', 'id')
+                ],
+            ]);
             
         });
 
@@ -88,6 +100,7 @@ class Plugin extends PluginBase
             ];
             $post->logo()->create(['data' => $fileFromPost], $sessionKey);
         }
+
     }
 
 }
