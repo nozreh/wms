@@ -8,7 +8,9 @@ use System\Classes\PluginBase;
 use RainLab\User\Models\User as UserModel;
 use RainLab\User\Controllers\Users as UsersController;
 use Backend\Models\User as BackendUser;
+use Backend\Models\UserGroup as BackendUserGroup;
 use Lang;
+use DB;
 
 class Plugin extends PluginBase
 {
@@ -73,18 +75,27 @@ class Plugin extends PluginBase
             $fields = __DIR__ . '/config/profile/fields.yaml';
             $config = Yaml::parse(File::get($fields));
             $widget->addFields($config['fields']);
+
+            // only get backend users under corporatecustomer usergroup code
+            $corporate_customers = BackendUserGroup::where('code', 'corporatecustomer')->first();
+            $backend_users_group_id = DB::table('backend_users_groups')
+                                    ->where('user_group_id', $corporate_customers->id)
+                                    ->lists('user_id');
+            // don't add the devadmin
+            $backend_users = BackendUser::where('is_superuser', 0)
+                                        ->whereIn('id', $backend_users_group_id)
+                                        ->lists('first_name', 'id');
+
             $widget->addFields(['backend_user_id' => [
                 'label'    => 'Admin Account',
                 'type'     => 'dropdown',
                 'span'     => 'auto',
                 'required' => '1',
-                'options' => BackendUser::lists('first_name', 'id')
+                'options' => $backend_users
                 ],
             ]);
             
         });
-
-
     }
 
     public function beforeValidate($model)
@@ -100,7 +111,6 @@ class Plugin extends PluginBase
             ];
             $post->logo()->create(['data' => $fileFromPost], $sessionKey);
         }
-
     }
 
 }
