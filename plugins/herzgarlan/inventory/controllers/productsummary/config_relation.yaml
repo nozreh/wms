@@ -1,0 +1,17 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+productmovement:
+    label: Product Movement
+    manage:
+        form: $/herzgarlan/inventory/models/productsummary/summary_fields.yaml
+        list: $/herzgarlan/inventory/models/productsummary/columns.yaml
+    view:
+        list: $/herzgarlan/inventory/models/productsummary/summary_columns.yaml
+        toolbarButtons: create|delete
+    readOnly: true
+    showSearch: true
+    defaultSort:
+        column: created_at
+        direction: desc

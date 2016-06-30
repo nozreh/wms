@@ -31,6 +31,12 @@ navigation:
                 icon: icon-table
                 permissions:
                     - manage_products
+    productsummary:
+        label: 'herzgarlan.inventory::lang.productsummary.menu_label'
+        url: herzgarlan/inventory/productsummary
+        icon: icon-table
+        permissions:
+            - manage_own_products
     myproductmovement:
         label: 'herzgarlan.inventory::lang.productmovement.menu_label'
         url: herzgarlan/inventory/myproductmovement

@@ -1,0 +1,12 @@
+fields:
+    name:
+        span: full
+        type: partial
+        path: $/herzgarlan/inventory/controllers/productsummary/name.htm
+tabs:
+    fields:
+        productmovement:
+            span: full
+            path: field_productmovement
+            type: partial
+            tab: 'Product Movement'

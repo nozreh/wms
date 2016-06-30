@@ -32,5 +32,8 @@
     ],
     'productmovement' => [
         'menu_label' => 'Product Movement'
+    ],
+    'productsummary' => [
+        'menu_label' => 'Product Summary'
     ]
 ];

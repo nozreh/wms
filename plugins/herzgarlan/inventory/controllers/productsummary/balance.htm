@@ -1,0 +1,14 @@
+<?php 
+$balance = HerzGarlan\Inventory\Models\ProductMovement::getBalance($record['id']); 
+if($balance['after_balance'] > $balance['before_balance'])
+{
+	print '<div style="color:green;"><i class="icon-plus"></i> <strong>'.$balance['after_balance'].'</strong></div>';
+}
+elseif($balance['after_balance'] < $balance['before_balance'])
+{
+	print '<div style="color:red;"><i class="icon-minus"></i> <strong>'.$balance['after_balance'].'</strong></div>';
+}
+else{
+	print '<div><strong>'.$balance['after_balance'].'</strong></div>';
+}
+?>

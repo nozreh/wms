@@ -1,0 +1,6 @@
+name: Product Summary
+modelClass: HerzGarlan\Inventory\Models\Product
+form: $/herzgarlan/inventory/models/productsummary/fields.yaml
+defaultRedirect: herzgarlan/inventory/productsummary
+preview: {  }
+readOnly: true

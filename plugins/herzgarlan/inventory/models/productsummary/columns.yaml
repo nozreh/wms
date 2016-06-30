@@ -1,0 +1,29 @@
+columns:
+    name:
+        label: 'herzgarlan.inventory::lang.product.name'
+        type: text
+        searchable: true
+        sortable: true
+    code:
+        label: 'herzgarlan.inventory::lang.product.code'
+        type: text
+        searchable: true
+        sortable: true
+    barcode:
+        label: 'herzgarlan.inventory::lang.product.barcode'
+        type: text
+        sortable: true
+        searchable: true
+    total_balance:
+        label: Balance
+        type: partial
+        path: $/herzgarlan/inventory/controllers/productmovement/_field_total_balance.htm
+        sortable: false
+    created_at:
+        label: 'herzgarlan.inventory::lang.product.created_at'
+        type: timetense
+        sortable: true
+    updated_at:
+        label: 'herzgarlan.inventory::lang.product.updated_at'
+        type: timetense
+        sortable: true

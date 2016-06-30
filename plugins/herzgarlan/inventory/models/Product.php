@@ -55,17 +55,35 @@ class Product extends Model
 
     public static function getTotalBalance($product_id)
     {
-        $product = Product::where('id', $product_id)->get();
+        $product = Product::where('id', $product_id)->first();
         $productmovement = ProductMovement::where('product_id', $product_id)->get();
-        $last_index = count($productmovement) > 0 ? count($productmovement) - 1 : 0;
-        $main_qty =  (int)$productmovement[$last_index]['after_carton'] * (int)$productmovement[$last_index]['after_unit'];
         $total_qty = 0;
-        $loose_carton_qty = 0;
+        // check is there is product movement
+        if( count($productmovement) > 0)
+        {
+            $last_index = count($productmovement) - 1;
+            $main_qty =  (int)$productmovement[$last_index]['after_carton'] * (int)$productmovement[$last_index]['after_unit'];
+        
+            $total_qty = 0;
+            $loose_carton_qty = 0;
 
-        foreach ($productmovement[$last_index]['after_loose_carton'] as $carton) {
-            $loose_carton_qty = $loose_carton_qty + ( (int)$carton['carton'] * (int)$carton['pieces'] );
+            foreach ($productmovement[$last_index]['after_loose_carton'] as $carton) {
+                $loose_carton_qty = $loose_carton_qty + ( (int)$carton['carton'] * (int)$carton['pieces'] );
+            }
+            $total_qty = $main_qty + $loose_carton_qty;
         }
-        $total_qty = $main_qty + $loose_carton_qty;
+        else // use the default product info
+        {
+            $main_qty =  (int)$product['carton_quantity'] * (int)$product['unit_quantity'];
+        
+            $total_qty = 0;
+            $loose_carton_qty = 0;
+
+            foreach ($product['loose_carton'] as $carton) {
+                $loose_carton_qty = $loose_carton_qty + ( (int)$carton['carton'] * (int)$carton['pieces'] );
+            }
+            $total_qty = $main_qty + $loose_carton_qty;
+        }
 
         return $total_qty;
     }

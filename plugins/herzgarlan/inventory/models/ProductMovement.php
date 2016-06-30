@@ -3,6 +3,7 @@
 use Model;
 use BackendAuth;
 use Carbon\Carbon;
+use HerzGarlan\Inventory\Models\Product;
 
 /**
  * Model
@@ -63,5 +64,39 @@ class ProductMovement extends Model
         $movement->after_loose_carton = $product->loose_carton;
         $movement->save();
         return $movement;
+    }
+
+    public static function getBalance($productmovement_id)
+    {
+        $productmovement = self::where('id', $productmovement_id)->first();
+        $product = Product::where('id', $productmovement_id['product_id'])->first();
+        $total_qty = 0;
+        // check is there is product movement
+        if( count($productmovement) > 0)
+        {
+            // after
+            $after_qty =  (int)$productmovement['after_carton'] * (int)$productmovement['after_unit'];
+            $after_total = 0;
+            $after_loose_carton = 0;
+
+            foreach ($productmovement['after_loose_carton'] as $carton) {
+                $after_loose_carton = $after_loose_carton + ( (int)$carton['carton'] * (int)$carton['pieces'] );
+            }
+            $after_total = $after_qty + $after_loose_carton;
+
+            //before
+            $before_qty =  (int)$productmovement['before_carton'] * (int)$productmovement['before_unit'];
+        
+            $before_total = 0;
+            $before_loose_carton = 0;
+
+            foreach ($productmovement['before_loose_carton'] as $carton) {
+                $before_loose_carton = $before_loose_carton + ( (int)$carton['carton'] * (int)$carton['pieces'] );
+            }
+
+            $before_total = $before_qty + $before_loose_carton;
+        }
+
+        return ['after_balance' => $after_total, 'before_balance' => $before_total];
     }
 }

@@ -1,0 +1,15 @@
+
+columns:
+    created_at:
+        label: Date/Time
+        type: datetime
+        sortable: true
+    backend_user:
+        label: Updated by
+        relation: backend_user
+        select: first_name
+    id:
+        label: Balance
+        type: partial
+        path: $/herzgarlan/inventory/controllers/productsummary/balance.htm
+    
