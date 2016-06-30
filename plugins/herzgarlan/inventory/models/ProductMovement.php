@@ -69,7 +69,6 @@ class ProductMovement extends Model
     public static function getBalance($productmovement_id)
     {
         $productmovement = self::where('id', $productmovement_id)->first();
-        $product = Product::where('id', $productmovement_id['product_id'])->first();
         $total_qty = 0;
         // check is there is product movement
         if( count($productmovement) > 0)
